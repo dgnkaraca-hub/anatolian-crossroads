@@ -1,5 +1,20 @@
 # Deploy — one landing page, one domain (Phase 0)
 
+**Current deployment: GitHub Pages** —
+<https://dgnkaraca-hub.github.io/anatolian-crossroads/> is served from the
+`gh-pages` branch of this repo. To redeploy after changes:
+
+```sh
+npm run assemble-site
+cd site && git init -b gh-pages && git add -A \
+  && git commit -m "Deploy unified site" \
+  && git push --force https://github.com/dgnkaraca-hub/anatolian-crossroads.git gh-pages \
+  && rm -rf .git
+```
+
+All links in the assembled site are relative, so the same `site/` works at
+a domain root (Cloudflare/Netlify, below) and under the Pages subpath.
+
 The whole project ships as a single static site assembled from four builds:
 
 | Path | App | Source repo/dir |
