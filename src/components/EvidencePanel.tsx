@@ -1,0 +1,133 @@
+/**
+ * Source-first evidence panel: the reader should always see WHY a record
+ * exists before what it claims. Shows citations, confidence badge, dates,
+ * connected records, and the drill-down link when a micro module exists.
+ */
+
+import { MODULES, dataset, getNode } from '../data/graph'
+import { neighborsOf } from '../lib/filter'
+import {
+  edgeLabel,
+  formatSpan,
+  nodeLabel,
+  nodeSummary,
+  type DataLang,
+} from '../lib/i18n'
+
+interface Props {
+  selectedId: string | null
+  lang: DataLang
+  onSelect: (id: string | null) => void
+}
+
+export default function EvidencePanel({ selectedId, lang, onSelect }: Props) {
+  const node = selectedId ? getNode(selectedId) : undefined
+
+  if (!node) {
+    return (
+      <aside className="evidence-panel">
+        <div className="panel-title">Evidence</div>
+        <p className="placeholder">
+          Select a site, concept or interpretation to see its evidence trail:
+          sources first, then dates, confidence and connections.
+        </p>
+        <p className="placeholder small">
+          Cross-site meaning only travels through concept nodes — this atlas
+          compares, it never claims continuity.
+        </p>
+      </aside>
+    )
+  }
+
+  const module = MODULES[node.id]
+  const neighbors = neighborsOf(node.id)
+
+  return (
+    <aside className="evidence-panel">
+      <div className="panel-title">Evidence</div>
+
+      <div className={`node-type-tag type-${node.type}`}>{node.type}</div>
+      <h2>{nodeLabel(node, lang)}</h2>
+      <div className="meta-line">
+        {formatSpan(node.date_start, node.date_end)}
+        {node.modern_location ? ` · ${node.modern_location}` : ''}
+      </div>
+      {node.ancient_region && (
+        <div className="meta-line faint">{node.ancient_region}</div>
+      )}
+
+      <div className={`confidence-badge conf-${node.confidence}`}>
+        confidence: {node.confidence}
+      </div>
+      {node.evidence_type && (
+        <div className="meta-line">
+          primary evidence: {node.evidence_type.replace('_', ' ')}
+        </div>
+      )}
+
+      <section className="sources-block">
+        <h3>Sources</h3>
+        <ul>
+          {node.sources.map((key) => (
+            <li key={key}>
+              <span className="source-key">{key}</span>
+              <span className="source-full">
+                {dataset.meta.bibliography[key] ?? 'MISSING FROM BIBLIOGRAPHY'}
+              </span>
+            </li>
+          ))}
+        </ul>
+        {node.source_urls && node.source_urls.length > 0 && (
+          <div className="source-urls">
+            {node.source_urls.map((url) => (
+              <a key={url} href={url} target="_blank" rel="noreferrer">
+                {url}
+              </a>
+            ))}
+          </div>
+        )}
+      </section>
+
+      {nodeSummary(node, lang) && <p className="summary">{nodeSummary(node, lang)}</p>}
+      {node.notes && <p className="notes">{node.notes}</p>}
+
+      {module && (
+        <a className="module-link" href={module.url} target="_blank" rel="noreferrer">
+          Open micro module: {module.label} ↗
+        </a>
+      )}
+
+      <section className="neighbors-block">
+        <h3>Connections ({neighbors.length})</h3>
+        <ul>
+          {neighbors.map(({ edge, otherId }) => {
+            const other = getNode(otherId)
+            if (!other) return null
+            return (
+              <li key={edge.id}>
+                <button className="neighbor-link" onClick={() => onSelect(otherId)}>
+                  {nodeLabel(other, lang)}
+                </button>
+                <span className="relation-tag">{edge.relation.replace(/_/g, ' ')}</span>
+                <span className={`conf-dot conf-${edge.confidence}`} title={edge.confidence} />
+                {edgeLabel(edge, lang) && (
+                  <div className="edge-label">{edgeLabel(edge, lang)}</div>
+                )}
+                {edge.evidence_note && (
+                  <div className="edge-note">{edge.evidence_note}</div>
+                )}
+                <div className="edge-sources">
+                  {edge.sources.map((s) => (
+                    <span key={s} className="source-key small">
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </li>
+            )
+          })}
+        </ul>
+      </section>
+    </aside>
+  )
+}

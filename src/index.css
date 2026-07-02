@@ -1,0 +1,104 @@
+/*
+ * Anatolian Crossroads — design system.
+ * Continuation of the Sam'al / Göbekli Tepe visual language: dark
+ * excavation-section ground, a single ochre accent, restrained serif labels.
+ * Colour encodes node type; everything else stays muted so data reads first.
+ */
+
+:root {
+  /* Surfaces */
+  --bg: #17140f;
+  --bg-panel: #201c16;
+  --bg-elevated: #29241d;
+  --bg-input: #1c1813;
+  --border: #38322a;
+  --border-strong: #494138;
+
+  /* Text */
+  --text: #ece6dc;
+  --text-muted: #b3a995;
+  --text-faint: #7d756a;
+
+  /* Accent (single ochre) */
+  --accent: #c98a3b;
+  --accent-soft: #e0b273;
+
+  /* Node-type colours */
+  --type-site: #c98a3b;          /* ochre — places */
+  --type-concept: #7fa6a0;       /* verdigris — the shared layer */
+  --type-interpretation: #8d8bc4;/* violet — readings, kept apart */
+
+  /* Confidence encoding */
+  --conf-high: #6fae6f;
+  --conf-medium: #d2b04a;
+  --conf-low: #c77b56;
+  --conf-speculative: #9a8fb8;
+
+  /* Basemap */
+  --coast: #4a4238;
+  --river: #4f6672;
+
+  --radius: 8px;
+  --radius-sm: 5px;
+  --shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Iowan Old Style', 'Palatino Linotype', 'Georgia', serif;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  margin: 0;
+}
+
+a {
+  color: var(--accent-soft);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+select,
+input[type='range'] {
+  accent-color: var(--accent);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
