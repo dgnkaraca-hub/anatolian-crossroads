@@ -733,6 +733,41 @@
   padding: 8px 0;
 }
 
+/* Bridge (module evidence) block */
+
+.bridge-block ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bridge-block li {
+  border-top: 1px solid var(--border);
+  padding: 8px 0;
+}
+
+.bridge-record {
+  font-family: var(--font-serif);
+  font-size: 13.5px;
+  color: var(--text);
+  text-decoration: none;
+  margin-right: 8px;
+}
+
+.bridge-record:hover {
+  color: var(--accent-soft);
+}
+
+.bridge-module-tag {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--type-concept);
+  border: 1px solid var(--type-concept);
+  border-radius: 999px;
+  padding: 0 7px;
+}
+
 .neighbor-link {
   background: none;
   border: none;

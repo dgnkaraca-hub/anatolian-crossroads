@@ -5,6 +5,7 @@
  */
 
 import { MODULES, dataset, getNode } from '../data/graph'
+import { bridgeFor } from '../data/bridge'
 import { neighborsOf } from '../lib/filter'
 import type { EdgeRelation, GraphEdge } from '../types/schema'
 import {
@@ -57,6 +58,7 @@ export default function EvidencePanel({ selectedId, lang, onSelect }: Props) {
 
   const module = MODULES[node.id]
   const neighbors = neighborsOf(node.id)
+  const bridge = bridgeFor(node.id)
 
   return (
     <aside className="evidence-panel">
@@ -111,6 +113,35 @@ export default function EvidencePanel({ selectedId, lang, onSelect }: Props) {
         <a className="module-link" href={module.url} target="_blank" rel="noreferrer">
           Open micro module: {module.label} ↗
         </a>
+      )}
+
+      {bridge.length > 0 && (
+        <section className="bridge-block">
+          <h3>Module evidence ({bridge.length})</h3>
+          <ul>
+            {bridge.map((b) => (
+              <li key={`${b.module}:${b.record}:${b.macro}`}>
+                <a
+                  className="bridge-record"
+                  href={MODULES[b.module].url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {lang === 'tr' ? b.label_tr : b.label_en} ↗
+                </a>
+                <span className="bridge-module-tag">{MODULES[b.module].label}</span>
+                <div className="edge-note">{lang === 'tr' ? b.note_tr : b.note_en}</div>
+                <div className="edge-sources">
+                  {b.sources.map((s) => (
+                    <span key={s} className="source-key small">
+                      {s}
+                    </span>
+                  ))}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
 
       <section className="neighbors-block">

@@ -19,6 +19,16 @@ direct cultural continuity between sites.**
 - **Micro modules (sibling repos, untouched):**
   - Sam'al Epigraphic Network — port **5185**
   - Göbekli Tepe Network — port **5186**
+  - Kültepe-Kaneš (Pūšu-kēn family network) — port **5191**
+- **Bridge layer** (`src/data/bridge.ts`) — the machine-readable link
+  between the levels: curated, sourced mappings from macro concepts and
+  module sites to REAL records inside the modules (e.g. *memory* →
+  Katumuwa stele · Enclosure D · Pūšu-kēn archive). Shown as "Module
+  evidence" in the evidence panel; exported as
+  `data/anatolian-crossroads-combined.gexf`. Record ids are verified
+  against the sibling datasets with `npm run check-bridge`. Module
+  evidence attaches only to concepts and its own site — the
+  no-continuity rule holds across levels.
 
 ## Views
 

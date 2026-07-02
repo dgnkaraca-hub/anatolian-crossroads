@@ -4,7 +4,8 @@
  */
 
 import { MACRO_SITE_RELATIONS } from '../types/schema'
-import { dataset } from './graph'
+import { MODULES, dataset } from './graph'
+import { BRIDGE } from './bridge'
 import { STORIES } from './stories'
 
 export function validateGraph(): string[] {
@@ -86,6 +87,25 @@ export function validateStories(): string[] {
           issues.push(`${at}: source key "${s}" missing from bibliography`)
     })
   }
+  return issues
+}
+
+/**
+ * Bridge entries must point at existing macro nodes and known modules, and
+ * stay sourced like every other record. (Record ids inside the modules are
+ * checked against the sibling datasets by scripts/check-bridge.mjs.)
+ */
+export function validateBridge(): string[] {
+  const issues: string[] = []
+  const nodeIds = new Set(dataset.nodes.map((n) => n.id))
+  BRIDGE.forEach((b, i) => {
+    const at = `bridge[${i}] (${b.module}:${b.record})`
+    if (!nodeIds.has(b.macro)) issues.push(`${at}: unknown macro node ${b.macro}`)
+    if (!MODULES[b.module]) issues.push(`${at}: unknown module ${b.module}`)
+    if (!b.sources || b.sources.length === 0)
+      issues.push(`${at}: empty sources[] (un-sourced data is a bug)`)
+    if (!b.label_en || !b.label_tr) issues.push(`${at}: missing bilingual labels`)
+  })
   return issues
 }
 

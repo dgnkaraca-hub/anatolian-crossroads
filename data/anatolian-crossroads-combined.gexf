@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://gexf.net/1.3" version="1.3">
+  <meta>
+    <creator>Anatolian Crossroads</creator>
+    <description>Anatolian Crossroads — macro atlas + module-evidence bridge (module records attach to concepts and their own sites only) — every node and edge sourced; see sources.md</description>
+  </meta>
+  <graph defaultedgetype="directed">
+    <attributes class="node">
+      <attribute id="type" title="type" type="string"/>
+      <attribute id="confidence" title="confidence" type="string"/>
+      <attribute id="date_start" title="date_start" type="integer"/>
+      <attribute id="date_end" title="date_end" type="integer"/>
+      <attribute id="evidence" title="evidence" type="string"/>
+      <attribute id="sources" title="sources" type="string"/>
+    </attributes>
+    <attributes class="edge">
+      <attribute id="e_relation" title="relation" type="string"/>
+      <attribute id="e_confidence" title="confidence" type="string"/>
+    </attributes>
+    <nodes>
+      <node id="gobekli-tepe" label="Göbekli Tepe">
+      <attvalues>
+        <attvalue for="type" value="site"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-9600"/>
+        <attvalue for="date_end" value="-8200"/>
+        <attvalue for="evidence" value="pillar"/>
+        <attvalue for="sources" value="UNESCO-1572"/>
+      </attvalues>
+      </node>
+      <node id="karahantepe" label="Karahantepe">
+      <attvalues>
+        <attvalue for="type" value="site"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-9500"/>
+        <attvalue for="date_end" value="-8000"/>
+        <attvalue for="evidence" value="pillar"/>
+        <attvalue for="sources" value="TASTEPELER"/>
+      </attvalues>
+      </node>
+      <node id="sayburc" label="Sayburç">
+      <attvalues>
+        <attvalue for="type" value="site"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-8800"/>
+        <attvalue for="date_end" value="-8000"/>
+        <attvalue for="evidence" value="relief"/>
+        <attvalue for="sources" value="OZDOGAN-2022; TASTEPELER"/>
+      </attvalues>
+      </node>
+      <node id="catalhoyuk" label="Çatalhöyük">
+      <attvalues>
+        <attvalue for="type" value="site"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-7400"/>
+        <attvalue for="date_end" value="-5200"/>
+        <attvalue for="evidence" value="wall_painting"/>
+        <attvalue for="sources" value="UNESCO-1405"/>
+      </attvalues>
+      </node>
+      <node id="arslantepe" label="Arslantepe">
+      <attvalues>
+        <attvalue for="type" value="site"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-4300"/>
+        <attvalue for="date_end" value="-3100"/>
+        <attvalue for="evidence" value="seal"/>
+        <attvalue for="sources" value="UNESCO-1622"/>
+      </attvalues>
+      </node>
+      <node id="kultepe" label="Kültepe-Kaneš">
+      <attvalues>
+        <attvalue for="type" value="site"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-1950"/>
+        <attvalue for="date_end" value="-1750"/>
+        <attvalue for="evidence" value="tablet"/>
+        <attvalue for="sources" value="UNESCO-T5905; UNESCO-MOW-KULTEPE"/>
+      </attvalues>
+      </node>
+      <node id="hattusa" label="Hattuşa / Yazılıkaya">
+      <attvalues>
+        <attvalue for="type" value="site"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-1650"/>
+        <attvalue for="date_end" value="-1180"/>
+        <attvalue for="evidence" value="architecture"/>
+        <attvalue for="sources" value="UNESCO-377"/>
+      </attvalues>
+      </node>
+      <node id="karkamis" label="Karkamış">
+      <attvalues>
+        <attvalue for="type" value="site"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-1200"/>
+        <attvalue for="date_end" value="-700"/>
+        <attvalue for="evidence" value="inscription"/>
+        <attvalue for="sources" value="HITTITEMON-KARKAMIS"/>
+      </attvalues>
+      </node>
+      <node id="samal" label="Sam'al / Zincirli">
+      <attvalues>
+        <attvalue for="type" value="site"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-920"/>
+        <attvalue for="date_end" value="-713"/>
+        <attvalue for="evidence" value="stele"/>
+        <attvalue for="sources" value="ZINCIRLI-EXP; WSRP-KILAMUWA"/>
+      </attvalues>
+      </node>
+      <node id="karatepe" label="Karatepe-Aslantaş">
+      <attvalues>
+        <attvalue for="type" value="site"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-800"/>
+        <attvalue for="date_end" value="-650"/>
+        <attvalue for="evidence" value="inscription"/>
+        <attvalue for="sources" value="MUZE-KARATEPE"/>
+      </attvalues>
+      </node>
+      <node id="concept-ritual" label="Ritual">
+      <attvalues>
+        <attvalue for="type" value="concept"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="AC-BRIEF; UNESCO-1572"/>
+      </attvalues>
+      </node>
+      <node id="concept-body" label="Body">
+      <attvalues>
+        <attvalue for="type" value="concept"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="AC-BRIEF; UNESCO-1405"/>
+      </attvalues>
+      </node>
+      <node id="concept-animal-symbolism" label="Animal symbolism">
+      <attvalues>
+        <attvalue for="type" value="concept"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="AC-BRIEF; UNESCO-1572"/>
+      </attvalues>
+      </node>
+      <node id="concept-writing" label="Writing">
+      <attvalues>
+        <attvalue for="type" value="concept"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="AC-BRIEF; UNESCO-MOW-KULTEPE"/>
+      </attvalues>
+      </node>
+      <node id="concept-power" label="Power">
+      <attvalues>
+        <attvalue for="type" value="concept"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="AC-BRIEF; UNESCO-1622"/>
+      </attvalues>
+      </node>
+      <node id="concept-trade" label="Trade">
+      <attvalues>
+        <attvalue for="type" value="concept"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="AC-BRIEF; UNESCO-MOW-KULTEPE"/>
+      </attvalues>
+      </node>
+      <node id="concept-memory" label="Memory">
+      <attvalues>
+        <attvalue for="type" value="concept"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="AC-BRIEF; ISAC-KUTTAMUWA"/>
+      </attvalues>
+      </node>
+      <node id="concept-multilingualism" label="Multilingualism">
+      <attvalues>
+        <attvalue for="type" value="concept"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="AC-BRIEF; WSRP-KILAMUWA"/>
+      </attvalues>
+      </node>
+      <node id="concept-border-kingdoms" label="Border kingdoms">
+      <attvalues>
+        <attvalue for="type" value="concept"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="AC-BRIEF; ZINCIRLI-EXP"/>
+      </attvalues>
+      </node>
+      <node id="interp-t-pillars-anthropomorphic" label="T-pillars as anthropomorphic beings">
+      <attvalues>
+        <attvalue for="type" value="interpretation"/>
+        <attvalue for="confidence" value="medium"/>
+        <attvalue for="sources" value="SCHMIDT-2010"/>
+      </attvalues>
+      </node>
+      <node id="interp-kuttamuwa-soul" label="Kuttamuwa stele implies a soul dwelling in the stone">
+      <attvalues>
+        <attvalue for="type" value="interpretation"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="ISAC-KUTTAMUWA"/>
+      </attvalues>
+      </node>
+      <node id="interp-sayburc-narrative" label="Sayburç relief as one of the earliest narrative scenes">
+      <attvalues>
+        <attvalue for="type" value="interpretation"/>
+        <attvalue for="confidence" value="medium"/>
+        <attvalue for="sources" value="OZDOGAN-2022"/>
+      </attvalues>
+      </node>
+      <node id="samal:insc-katumuwa" label="Katumuwa stele">
+      <attvalues>
+        <attvalue for="type" value="module_record(samal)"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="Sam'al Epigraphic Network dataset — insc-katumuwa; Struble &amp; Herrmann 2009, BASOR 356"/>
+      </attvalues>
+      </node>
+      <node id="gobekli-tepe:enc-d" label="Enclosure D">
+      <attvalues>
+        <attvalue for="type" value="module_record(gobekli-tepe)"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="Göbekli Tepe Network dataset — enc-d; Schmidt 2010, Documenta Praehistorica 37"/>
+      </attvalues>
+      </node>
+      <node id="kultepe:pushu-ken-archive" label="Pūšu-kēn archive">
+      <attvalues>
+        <attvalue for="type" value="module_record(kultepe)"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="Kültepe module dataset — pushu-ken-archive; UNESCO Memory of the World (Kültepe archives)"/>
+      </attvalues>
+      </node>
+      <node id="samal:insc-kilamuwa" label="Kilamuwa inscription">
+      <attvalues>
+        <attvalue for="type" value="module_record(samal)"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="Sam'al Epigraphic Network dataset — insc-kilamuwa; KAI 24; USC WSRP documentation"/>
+      </attvalues>
+      </node>
+      <node id="kultepe:lamassi-letters" label="Letters of Lamassī">
+      <attvalues>
+        <attvalue for="type" value="module_record(kultepe)"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="Kültepe module dataset — lamassi-letters; Michel 2020, Women of Assur and Kanesh"/>
+      </attvalues>
+      </node>
+      <node id="gobekli-tepe:pil-43" label="Pillar 43 (&quot;Vulture Stone&quot;)">
+      <attvalues>
+        <attvalue for="type" value="module_record(gobekli-tepe)"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="Göbekli Tepe Network dataset — pil-43; Schmidt 2010, Documenta Praehistorica 37"/>
+      </attvalues>
+      </node>
+      <node id="gobekli-tepe:mot-fox" label="Fox motif">
+      <attvalues>
+        <attvalue for="type" value="module_record(gobekli-tepe)"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="Göbekli Tepe Network dataset — mot-fox; Schmidt 2010, Documenta Praehistorica 37"/>
+      </attvalues>
+      </node>
+      <node id="gobekli-tepe:pil-18" label="Pillar 18 (central pillar, Enclosure D)">
+      <attvalues>
+        <attvalue for="type" value="module_record(gobekli-tepe)"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="Göbekli Tepe Network dataset — pil-18; Schmidt 2010, Documenta Praehistorica 37"/>
+      </attvalues>
+      </node>
+      <node id="gobekli-tepe:mot-headless-man" label="Headless man motif">
+      <attvalues>
+        <attvalue for="type" value="module_record(gobekli-tepe)"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="Göbekli Tepe Network dataset — mot-headless-man; Schmidt 2010, Documenta Praehistorica 37"/>
+      </attvalues>
+      </node>
+      <node id="samal:lang-samalian" label="Sam'alian (with Phoenician and Aramaic)">
+      <attvalues>
+        <attvalue for="type" value="module_record(samal)"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="Sam'al Epigraphic Network dataset — lang-samalian; KAI 24, 214-215; Zincirli expedition"/>
+      </attvalues>
+      </node>
+      <node id="kultepe:kanesh" label="Kaneš, an Anatolian host city">
+      <attvalues>
+        <attvalue for="type" value="module_record(kultepe)"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="Kültepe module dataset — kanesh; UNESCO Memory of the World (Kültepe archives)"/>
+      </attvalues>
+      </node>
+      <node id="samal:insc-hadad" label="Hadad statue inscription">
+      <attvalues>
+        <attvalue for="type" value="module_record(samal)"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="Sam'al Epigraphic Network dataset — insc-hadad; KAI 214"/>
+      </attvalues>
+      </node>
+      <node id="kultepe:vengeance-dossier" label="&quot;Year of Vengeance&quot; dossier">
+      <attvalues>
+        <attvalue for="type" value="module_record(kultepe)"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="Kültepe module dataset — vengeance-dossier; Stratford 2017, A Year of Vengeance"/>
+      </attvalues>
+      </node>
+      <node id="samal:insc-panamuwa-ii" label="Panamuwa II inscription">
+      <attvalues>
+        <attvalue for="type" value="module_record(samal)"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="Sam'al Epigraphic Network dataset — insc-panamuwa-ii; KAI 215"/>
+      </attvalues>
+      </node>
+      <node id="samal:king-kilamuwa" label="Kilamuwa">
+      <attvalues>
+        <attvalue for="type" value="module_record(samal)"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="Sam'al Epigraphic Network dataset — king-kilamuwa; KAI 24"/>
+      </attvalues>
+      </node>
+      <node id="kultepe:ahaha" label="Ahaha">
+      <attvalues>
+        <attvalue for="type" value="module_record(kultepe)"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="Kültepe module dataset — ahaha; Michel 2020"/>
+      </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="cor-gobekli-karahan" source="gobekli-tepe" target="karahantepe" label="corridor">
+        <attvalues>
+          <attvalue for="e_relation" value="corridor"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="cor-karahan-sayburc" source="karahantepe" target="sayburc" label="corridor">
+        <attvalues>
+          <attvalue for="e_relation" value="corridor"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="cor-arslantepe-karkamis" source="arslantepe" target="karkamis" label="corridor">
+        <attvalues>
+          <attvalue for="e_relation" value="corridor"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="cor-hattusa-karkamis" source="hattusa" target="karkamis" label="corridor">
+        <attvalues>
+          <attvalue for="e_relation" value="corridor"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="cor-kultepe-hattusa" source="kultepe" target="hattusa" label="corridor">
+        <attvalues>
+          <attvalue for="e_relation" value="corridor"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="cor-samal-karatepe" source="samal" target="karatepe" label="corridor">
+        <attvalues>
+          <attvalue for="e_relation" value="corridor"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="cor-karkamis-samal" source="karkamis" target="samal" label="corridor">
+        <attvalues>
+          <attvalue for="e_relation" value="corridor"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="cmp-gobekli-sayburc" source="gobekli-tepe" target="sayburc" label="compares_with">
+        <attvalues>
+          <attvalue for="e_relation" value="compares_with"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="cmp-gobekli-catalhoyuk" source="gobekli-tepe" target="catalhoyuk" label="compares_with">
+        <attvalues>
+          <attvalue for="e_relation" value="compares_with"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="cmp-samal-karatepe" source="samal" target="karatepe" label="compares_with">
+        <attvalues>
+          <attvalue for="e_relation" value="compares_with"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="cmp-karkamis-karatepe" source="karkamis" target="karatepe" label="compares_with">
+        <attvalues>
+          <attvalue for="e_relation" value="compares_with"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="cmp-arslantepe-kultepe" source="arslantepe" target="kultepe" label="compares_with">
+        <attvalues>
+          <attvalue for="e_relation" value="compares_with"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="con-gobekli-tepe--ritual" source="gobekli-tepe" target="concept-ritual" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-karahantepe--ritual" source="karahantepe" target="concept-ritual" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-sayburc--ritual" source="sayburc" target="concept-ritual" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="con-catalhoyuk--ritual" source="catalhoyuk" target="concept-ritual" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-hattusa--ritual" source="hattusa" target="concept-ritual" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-gobekli-tepe--body" source="gobekli-tepe" target="concept-body" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="con-karahantepe--body" source="karahantepe" target="concept-body" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-sayburc--body" source="sayburc" target="concept-body" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-catalhoyuk--body" source="catalhoyuk" target="concept-body" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-gobekli-tepe--animal-symbolism" source="gobekli-tepe" target="concept-animal-symbolism" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-karahantepe--animal-symbolism" source="karahantepe" target="concept-animal-symbolism" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-sayburc--animal-symbolism" source="sayburc" target="concept-animal-symbolism" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-catalhoyuk--animal-symbolism" source="catalhoyuk" target="concept-animal-symbolism" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-karkamis--animal-symbolism" source="karkamis" target="concept-animal-symbolism" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-samal--animal-symbolism" source="samal" target="concept-animal-symbolism" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-karatepe--animal-symbolism" source="karatepe" target="concept-animal-symbolism" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-arslantepe--writing" source="arslantepe" target="concept-writing" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="con-kultepe--writing" source="kultepe" target="concept-writing" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-hattusa--writing" source="hattusa" target="concept-writing" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-karkamis--writing" source="karkamis" target="concept-writing" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-samal--writing" source="samal" target="concept-writing" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-karatepe--writing" source="karatepe" target="concept-writing" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-arslantepe--power" source="arslantepe" target="concept-power" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-hattusa--power" source="hattusa" target="concept-power" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-karkamis--power" source="karkamis" target="concept-power" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-samal--power" source="samal" target="concept-power" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-karatepe--power" source="karatepe" target="concept-power" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-kultepe--trade" source="kultepe" target="concept-trade" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-arslantepe--trade" source="arslantepe" target="concept-trade" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-karkamis--trade" source="karkamis" target="concept-trade" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="con-catalhoyuk--memory" source="catalhoyuk" target="concept-memory" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-gobekli-tepe--memory" source="gobekli-tepe" target="concept-memory" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="con-samal--memory" source="samal" target="concept-memory" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-hattusa--memory" source="hattusa" target="concept-memory" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="con-samal--multilingualism" source="samal" target="concept-multilingualism" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-karatepe--multilingualism" source="karatepe" target="concept-multilingualism" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-kultepe--multilingualism" source="kultepe" target="concept-multilingualism" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-hattusa--multilingualism" source="hattusa" target="concept-multilingualism" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-samal--border-kingdoms" source="samal" target="concept-border-kingdoms" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-karatepe--border-kingdoms" source="karatepe" target="concept-border-kingdoms" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-karkamis--border-kingdoms" source="karkamis" target="concept-border-kingdoms" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="int-gobekli-t-pillars" source="gobekli-tepe" target="interp-t-pillars-anthropomorphic" label="interpreted_as">
+        <attvalues>
+          <attvalue for="e_relation" value="interpreted_as"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="int-karahan-t-pillars" source="karahantepe" target="interp-t-pillars-anthropomorphic" label="interpreted_as">
+        <attvalues>
+          <attvalue for="e_relation" value="interpreted_as"/>
+          <attvalue for="e_confidence" value="speculative"/>
+        </attvalues>
+      </edge>
+      <edge id="int-samal-kuttamuwa" source="samal" target="interp-kuttamuwa-soul" label="interpreted_as">
+        <attvalues>
+          <attvalue for="e_relation" value="interpreted_as"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="int-sayburc-narrative" source="sayburc" target="interp-sayburc-narrative" label="interpreted_as">
+        <attvalues>
+          <attvalue for="e_relation" value="interpreted_as"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-0" source="samal:insc-katumuwa" target="concept-memory" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-1" source="gobekli-tepe:enc-d" target="concept-memory" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-2" source="kultepe:pushu-ken-archive" target="concept-memory" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-3" source="samal:insc-kilamuwa" target="concept-writing" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-4" source="kultepe:lamassi-letters" target="concept-writing" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-5" source="gobekli-tepe:pil-43" target="concept-animal-symbolism" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-6" source="gobekli-tepe:mot-fox" target="concept-animal-symbolism" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-7" source="gobekli-tepe:pil-18" target="concept-body" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-8" source="gobekli-tepe:mot-headless-man" target="concept-body" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-9" source="samal:lang-samalian" target="concept-multilingualism" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-10" source="kultepe:kanesh" target="concept-multilingualism" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-11" source="gobekli-tepe:enc-d" target="concept-ritual" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-12" source="samal:insc-hadad" target="concept-ritual" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-13" source="kultepe:vengeance-dossier" target="concept-trade" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-14" source="samal:insc-panamuwa-ii" target="concept-power" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-15" source="samal:insc-kilamuwa" target="concept-border-kingdoms" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-16" source="samal:insc-katumuwa" target="samal" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-17" source="samal:king-kilamuwa" target="samal" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-18" source="gobekli-tepe:enc-d" target="gobekli-tepe" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-19" source="gobekli-tepe:pil-43" target="gobekli-tepe" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-20" source="kultepe:lamassi-letters" target="kultepe" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bridge-21" source="kultepe:ahaha" target="kultepe" label="module_evidence">
+        <attvalues>
+          <attvalue for="e_relation" value="module_evidence"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>

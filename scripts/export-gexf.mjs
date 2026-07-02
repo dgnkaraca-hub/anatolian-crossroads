@@ -98,3 +98,59 @@ await writeFile(
   toGexf(kultepe, { title: 'Kültepe-Kaneš — the Pūšu-kēn family network' }),
 )
 console.log(`kultepe GEXF: ${kultepe.nodes.length} nodes, ${kultepe.edges.length} edges`)
+
+// Combined graph: the macro atlas plus the curated bridge layer — module
+// evidence records attach to concepts and to their own site only, so the
+// no-continuity rule holds in the combined graph too.
+async function loadBridge() {
+  const server = await createServer({
+    root,
+    server: { middlewareMode: true },
+    logLevel: 'error',
+  })
+  try {
+    const mod = await server.ssrLoadModule('/src/data/bridge.ts')
+    return mod.BRIDGE
+  } finally {
+    await server.close()
+  }
+}
+
+const bridge = await loadBridge()
+const seen = new Set()
+const bridgeNodes = []
+for (const b of bridge) {
+  const id = `${b.module}:${b.record}`
+  if (seen.has(id)) continue
+  seen.add(id)
+  bridgeNodes.push({
+    id,
+    type: `module_record(${b.module})`,
+    label_en: b.label_en,
+    confidence: 'high',
+    sources: b.sources,
+  })
+}
+const combined = {
+  nodes: [...macro.nodes, ...bridgeNodes],
+  edges: [
+    ...macro.edges,
+    ...bridge.map((b, i) => ({
+      id: `bridge-${i}`,
+      source: `${b.module}:${b.record}`,
+      target: b.macro,
+      relation: 'module_evidence',
+      confidence: 'high',
+    })),
+  ],
+}
+await writeFile(
+  path.join(root, 'data', 'anatolian-crossroads-combined.gexf'),
+  toGexf(combined, {
+    title:
+      'Anatolian Crossroads — macro atlas + module-evidence bridge (module records attach to concepts and their own sites only)',
+  }),
+)
+console.log(
+  `combined GEXF: ${combined.nodes.length} nodes, ${combined.edges.length} edges (${bridgeNodes.length} bridged module records)`,
+)

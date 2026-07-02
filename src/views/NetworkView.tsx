@@ -107,7 +107,11 @@ export default function NetworkView({
       .force('charge', forceManyBody().strength(-320))
       .force('center', forceCenter(size.width / 2, size.height / 2))
       .force('collide', forceCollide<SimNode>().radius((d) => nodeRadius(d.node) + 14))
-      .on('tick', () => setTick((t) => t + 1))
+    // Settle synchronously first: d3's internal timer is rAF-based and can
+    // be frozen in backgrounded tabs — the layout must not depend on it.
+    sim.tick(160)
+    setTick((t) => t + 1)
+    sim.on('tick', () => setTick((t) => t + 1))
     simulationRef.current = sim
     return () => {
       sim.stop()

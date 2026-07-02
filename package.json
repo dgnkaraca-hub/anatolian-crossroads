@@ -11,6 +11,7 @@
     "typecheck": "tsc -b --noEmit",
     "export-data": "node scripts/export-data.mjs",
     "export-gexf": "node scripts/export-gexf.mjs",
+    "check-bridge": "node scripts/check-bridge.mjs",
     "print-plates": "node scripts/print-plates.mjs",
     "assemble-site": "node scripts/assemble-site.mjs"
   },

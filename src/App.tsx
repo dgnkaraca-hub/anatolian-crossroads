@@ -2,7 +2,12 @@ import { useEffect, useMemo, useState } from 'react'
 import './App.css'
 import { allSources, dataset } from './data/graph'
 import { STORIES } from './data/stories'
-import { sourcedRecordCount, validateGraph, validateStories } from './data/validate'
+import {
+  sourcedRecordCount,
+  validateBridge,
+  validateGraph,
+  validateStories,
+} from './data/validate'
 import { computeVisible, defaultFilters, type FilterState } from './lib/filter'
 import { exportCsv, exportJson } from './lib/export'
 import type { DataLang } from './lib/i18n'
@@ -27,7 +32,7 @@ export default function App() {
 
   // Enforce the sourcing/continuity disciplines at runtime (dev console).
   useEffect(() => {
-    const issues = [...validateGraph(), ...validateStories()]
+    const issues = [...validateGraph(), ...validateStories(), ...validateBridge()]
     if (issues.length > 0) {
       console.warn('[dataset] integrity issues:', issues)
     } else {
