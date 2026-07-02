@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Anatolian Crossroads — A Memory Graph</title>
+<meta name="description" content="A comparative memory graph from Neolithic symbols to Iron Age inscriptions: one macro atlas and three deep, fully sourced site modules." />
+<style>
+  :root {
+    --bg: #17140f;
+    --bg-panel: #201c16;
+    --bg-elevated: #29241d;
+    --border: #38322a;
+    --border-strong: #494138;
+    --text: #ece6dc;
+    --text-muted: #b3a995;
+    --text-faint: #7d756a;
+    --accent: #c98a3b;
+    --accent-soft: #e0b273;
+    --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Iowan Old Style', 'Palatino Linotype', 'Georgia', serif;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 56px 24px 48px;
+  }
+  h1, h2, h3 { font-family: var(--font-serif); font-weight: 600; margin: 0; }
+  h1 { font-size: 40px; letter-spacing: 0.02em; }
+  .subtitle {
+    color: var(--accent-soft);
+    font-family: var(--font-serif);
+    font-size: 18px;
+    margin-top: 6px;
+  }
+  .thesis {
+    color: var(--text-muted);
+    max-width: 720px;
+    margin: 22px 0 8px;
+  }
+  .discipline {
+    color: var(--text-faint);
+    font-size: 13px;
+    max-width: 720px;
+    border-left: 2px solid var(--accent);
+    padding-left: 12px;
+    margin: 18px 0 40px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  a.card {
+    display: block;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 20px 18px;
+    text-decoration: none;
+    color: var(--text);
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  a.card:hover {
+    border-color: var(--accent);
+    background: var(--bg-elevated);
+  }
+  a.card.atlas {
+    grid-column: 1 / -1;
+    border-color: var(--border-strong);
+  }
+  a.card.atlas:hover { border-color: var(--accent); }
+  .card h3 { font-size: 20px; }
+  .card .period {
+    color: var(--accent-soft);
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 2px 0 8px;
+  }
+  .card p { color: var(--text-muted); font-size: 13.5px; margin: 0; }
+  .card .open {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--accent-soft);
+    font-size: 13px;
+  }
+  footer {
+    margin-top: 48px;
+    color: var(--text-faint);
+    font-size: 12.5px;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+  }
+  footer a { color: var(--accent-soft); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Anatolian Crossroads</h1>
+    <div class="subtitle">A Memory Graph from Neolithic Symbols to Iron Age Inscriptions</div>
+    <p class="thesis">
+      In Anatolia and Upper Mesopotamia, memory is first constructed through
+      stone, body, animal and ritual imagery; it is later institutionalized
+      through seals, tablets, inscriptions, palaces and urban plans. This
+      project models that long arc as a comparative network: one macro atlas
+      spanning ten sites and 9,000 years, and deep per-site modules in which
+      every node and edge cites its sources.
+    </p>
+    <p class="discipline">
+      The graphs compare — they never claim continuity. Cross-site relations
+      are restricted to geographic corridors, explicit comparative pairs and
+      shared concepts; interpretive readings live in their own nodes, marked
+      by confidence.
+    </p>
+  </header>
+
+  <div class="grid">
+    <a class="card atlas" href="/atlas/">
+      <h3>The Atlas — Macro Graph</h3>
+      <div class="period">10 sites · 9600–700 BCE</div>
+      <p>
+        Schematic map and network of ten sites from Göbekli Tepe to
+        Karatepe-Aslantaş, joined by corridors, comparisons and nine shared
+        concepts — with a time slider, story routes and a source-first
+        evidence panel. Open data (JSON/CSV) included.
+      </p>
+      <span class="open">Open the atlas →</span>
+    </a>
+
+    <a class="card" href="/gobeklitepe/">
+      <h3>Göbekli Tepe</h3>
+      <div class="period">c. 9600–8200 BCE</div>
+      <p>
+        Pre-literate monumental ritual: enclosures, T-pillars, and the animal
+        and symbol iconography of the earliest sanctuaries.
+      </p>
+      <span class="open">Open the module →</span>
+    </a>
+
+    <a class="card" href="/kultepe/">
+      <h3>Kültepe-Kaneš</h3>
+      <div class="period">c. 1900–1840 BCE</div>
+      <p>
+        The rise of written memory through one merchant family: Pūšu-kēn,
+        Lamassī, their five children, partners, letters and trade.
+      </p>
+      <span class="open">Open the module →</span>
+    </a>
+
+    <a class="card" href="/samal/">
+      <h3>Sam'al / Zincirli</h3>
+      <div class="period">c. 920–713 BCE</div>
+      <p>
+        An Iron Age border kingdom's epigraphy: kings, officials, deities and
+        inscriptions in three languages.
+      </p>
+      <span class="open">Open the module →</span>
+    </a>
+  </div>
+
+  <footer>
+    Every node and edge across all four graphs carries sources; uncertainty
+    is modelled with a four-tier confidence system. Dataset:
+    <a href="/atlas/">JSON + CSV export in the atlas</a> · Method note in the
+    repository (<code>docs/METHOD.md</code>).
+  </footer>
+</div>
+</body>
+</html>

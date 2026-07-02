@@ -180,7 +180,7 @@ const siteNodes: GraphNode[] = [
     sources: ['UNESCO-T5905', 'UNESCO-MOW-KULTEPE'],
     source_urls: ['https://whc.unesco.org/en/tentativelists/5905/'],
     notes:
-      'Recommended third micro module (one published merchant-family network, curated sample). Coordinates approximate (c. 20 km NE of Kayseri).',
+      'Micro module exists (Pūšu-kēn family network, port 5191). Coordinates approximate (c. 20 km NE of Kayseri).',
   },
   {
     id: 'hattusa',
@@ -791,14 +791,24 @@ export function allSources(): string[] {
   return [...used].sort()
 }
 
-/** Micro modules that exist as sibling projects (drill-down targets). */
+/**
+ * Micro modules that exist as sibling projects (drill-down targets).
+ * In dev each module runs on its fixed port; in the assembled production
+ * site all modules live under one domain (see scripts/assemble-site.mjs).
+ */
+const DEV = import.meta.env.DEV
+
 export const MODULES: Record<string, { label: string; url: string }> = {
   samal: {
     label: "Sam'al Epigraphic Network",
-    url: 'http://localhost:5185/',
+    url: DEV ? 'http://localhost:5185/' : '/samal/',
   },
   'gobekli-tepe': {
     label: 'Göbekli Tepe Network',
-    url: 'http://localhost:5186/',
+    url: DEV ? 'http://localhost:5186/' : '/gobeklitepe/',
+  },
+  kultepe: {
+    label: 'Kültepe-Kaneš — Pūšu-kēn Family Network',
+    url: DEV ? 'http://localhost:5191/' : '/kultepe/',
   },
 }

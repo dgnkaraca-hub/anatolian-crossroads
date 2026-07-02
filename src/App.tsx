@@ -147,7 +147,8 @@ export default function App() {
 
       <footer className="app-footer">
         Comparative network — corridors, concepts and comparisons only; no
-        continuity claims. Micro modules: Sam'al (:5185) · Göbekli Tepe (:5186).
+        continuity claims. Micro modules: Sam'al (:5185) · Göbekli Tepe
+        (:5186) · Kültepe-Kaneš (:5191).
       </footer>
 
       {showSources && <SourcesModal onClose={() => setShowSources(false)} />}
