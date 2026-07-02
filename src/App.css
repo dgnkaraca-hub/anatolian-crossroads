@@ -187,6 +187,135 @@
   text-align: right;
 }
 
+/* Story routes ---------------------------------------------------------------- */
+
+.story-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 6px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.story-chip {
+  font-family: var(--font-serif);
+}
+
+.views {
+  position: relative;
+}
+
+.story-panel {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  width: min(400px, calc(100% - 32px));
+  background: var(--bg-elevated);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px 16px;
+}
+
+.story-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.story-panel-kicker {
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-soft);
+}
+
+.story-panel h3 {
+  font-size: 15.5px;
+  margin: 2px 0 0;
+}
+
+.story-intro {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 8px 0 0;
+}
+
+.story-step-focus {
+  margin-top: 10px;
+}
+
+.story-focus-label {
+  font-family: var(--font-serif);
+  font-size: 14px;
+}
+
+.story-narrative {
+  font-size: 13px;
+  margin: 6px 0 8px;
+}
+
+.story-panel-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 9px;
+}
+
+.story-panel-footer .chip:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.story-progress {
+  display: flex;
+  gap: 5px;
+  flex: 1;
+  justify-content: center;
+}
+
+.story-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-input);
+  padding: 0;
+}
+
+.story-dot.on {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.story-counter {
+  font-size: 11.5px;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+/* Evidence panel connection groups */
+
+.connection-group-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent-soft);
+  margin: 10px 0 2px;
+}
+
+.connection-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* Map view ------------------------------------------------------------------ */
 
 .map-container {

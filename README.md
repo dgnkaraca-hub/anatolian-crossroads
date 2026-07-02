@@ -24,10 +24,21 @@ direct cultural continuity between sites.**
 
 Research dashboard: schematic **site atlas** (corridors + time slider
 9600→700 BCE) coordinated with the **macro network** (d3-force) and a
-source-first **evidence panel** (citations, confidence badges, connection
-notes, drill-down links to micro modules). Filters: node type, confidence
-(with *hide speculative*), concept focus, evidence type. Data language
-toggles EN/TR; UI chrome stays English. Full dataset exports as JSON + CSV.
+source-first **evidence panel** (citations, confidence badges, connections
+grouped by relation class, drill-down links to micro modules). Filters:
+node type, confidence (with *hide speculative*), concept focus, evidence
+type. Data language toggles EN/TR; UI chrome stays English. Full dataset
+exports as JSON + CSV.
+
+**Story routes** — four guided walkthroughs across the macro graph, defined
+as sourced bilingual data in `src/data/stories.ts` (each step drives
+selection, time slider and concept focus; `validateStories()` checks node
+references, source keys and year ranges):
+
+1. From Stone Symbols to Royal Inscriptions
+2. The Rise of Written Memory
+3. Euphrates Corridor of Power
+4. Border Kingdoms and Multilingual Inscriptions
 
 ## Disciplines (non-negotiable)
 

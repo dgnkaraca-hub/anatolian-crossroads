@@ -5,6 +5,7 @@
 
 import { MACRO_SITE_RELATIONS } from '../types/schema'
 import { dataset } from './graph'
+import { STORIES } from './stories'
 
 export function validateGraph(): string[] {
   const issues: string[] = []
@@ -54,6 +55,37 @@ export function validateGraph(): string[] {
       )
   }
 
+  return issues
+}
+
+/**
+ * Story routes must stay consistent with the graph: every step focuses an
+ * existing node, cites known bibliography keys, and keeps its year inside
+ * the macro span (or null for the full range).
+ */
+export function validateStories(): string[] {
+  const issues: string[] = []
+  const nodeIds = new Set(dataset.nodes.map((n) => n.id))
+  const storyIds = new Set<string>()
+
+  for (const story of STORIES) {
+    if (storyIds.has(story.id)) issues.push(`duplicate story id: ${story.id}`)
+    storyIds.add(story.id)
+    if (story.steps.length === 0) issues.push(`story ${story.id}: no steps`)
+    story.steps.forEach((step, i) => {
+      const at = `story ${story.id} step ${i + 1}`
+      if (!nodeIds.has(step.focus)) issues.push(`${at}: unknown focus node ${step.focus}`)
+      if (step.conceptFocus && !nodeIds.has(step.conceptFocus))
+        issues.push(`${at}: unknown conceptFocus ${step.conceptFocus}`)
+      if (step.year !== null && (step.year < -9600 || step.year > -700))
+        issues.push(`${at}: year ${step.year} outside macro span (-9600..-700)`)
+      if (step.sources.length === 0)
+        issues.push(`${at}: empty sources[] (un-sourced narrative is a bug)`)
+      for (const s of step.sources)
+        if (!dataset.meta.bibliography[s])
+          issues.push(`${at}: source key "${s}" missing from bibliography`)
+    })
+  }
   return issues
 }
 

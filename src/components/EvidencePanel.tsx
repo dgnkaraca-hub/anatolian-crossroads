@@ -6,6 +6,7 @@
 
 import { MODULES, dataset, getNode } from '../data/graph'
 import { neighborsOf } from '../lib/filter'
+import type { EdgeRelation, GraphEdge } from '../types/schema'
 import {
   edgeLabel,
   formatSpan,
@@ -18,6 +19,21 @@ interface Props {
   selectedId: string | null
   lang: DataLang
   onSelect: (id: string | null) => void
+}
+
+/** Connection groups, in reading order: geography, comparison, theme, reading. */
+const CONNECTION_GROUPS: { title: string; relations: EdgeRelation[] }[] = [
+  { title: 'Corridors', relations: ['corridor'] },
+  { title: 'Comparisons', relations: ['compares_with'] },
+  { title: 'Concepts', relations: ['relates_to_concept'] },
+  { title: 'Interpretations', relations: ['interpreted_as', 'supported_by', 'disputed_by'] },
+]
+
+function groupOf(edge: GraphEdge): string {
+  return (
+    CONNECTION_GROUPS.find((g) => g.relations.includes(edge.relation))?.title ??
+    'Other connections'
+  )
 }
 
 export default function EvidencePanel({ selectedId, lang, onSelect }: Props) {
@@ -99,34 +115,53 @@ export default function EvidencePanel({ selectedId, lang, onSelect }: Props) {
 
       <section className="neighbors-block">
         <h3>Connections ({neighbors.length})</h3>
-        <ul>
-          {neighbors.map(({ edge, otherId }) => {
-            const other = getNode(otherId)
-            if (!other) return null
+        {[...CONNECTION_GROUPS.map((g) => g.title), 'Other connections'].map(
+          (groupTitle) => {
+            const members = neighbors.filter(({ edge }) => groupOf(edge) === groupTitle)
+            if (members.length === 0) return null
             return (
-              <li key={edge.id}>
-                <button className="neighbor-link" onClick={() => onSelect(otherId)}>
-                  {nodeLabel(other, lang)}
-                </button>
-                <span className="relation-tag">{edge.relation.replace(/_/g, ' ')}</span>
-                <span className={`conf-dot conf-${edge.confidence}`} title={edge.confidence} />
-                {edgeLabel(edge, lang) && (
-                  <div className="edge-label">{edgeLabel(edge, lang)}</div>
-                )}
-                {edge.evidence_note && (
-                  <div className="edge-note">{edge.evidence_note}</div>
-                )}
-                <div className="edge-sources">
-                  {edge.sources.map((s) => (
-                    <span key={s} className="source-key small">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </li>
+              <div key={groupTitle} className="connection-group">
+                <div className="connection-group-title">{groupTitle}</div>
+                <ul>
+                  {members.map(({ edge, otherId }) => {
+                    const other = getNode(otherId)
+                    if (!other) return null
+                    return (
+                      <li key={edge.id}>
+                        <button
+                          className="neighbor-link"
+                          onClick={() => onSelect(otherId)}
+                        >
+                          {nodeLabel(other, lang)}
+                        </button>
+                        <span className="relation-tag">
+                          {edge.relation.replace(/_/g, ' ')}
+                        </span>
+                        <span
+                          className={`conf-dot conf-${edge.confidence}`}
+                          title={edge.confidence}
+                        />
+                        {edgeLabel(edge, lang) && (
+                          <div className="edge-label">{edgeLabel(edge, lang)}</div>
+                        )}
+                        {edge.evidence_note && (
+                          <div className="edge-note">{edge.evidence_note}</div>
+                        )}
+                        <div className="edge-sources">
+                          {edge.sources.map((s) => (
+                            <span key={s} className="source-key small">
+                              {s}
+                            </span>
+                          ))}
+                        </div>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
             )
-          })}
-        </ul>
+          },
+        )}
       </section>
     </aside>
   )

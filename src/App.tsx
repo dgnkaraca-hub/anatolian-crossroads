@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import './App.css'
 import { allSources, dataset } from './data/graph'
-import { sourcedRecordCount, validateGraph } from './data/validate'
+import { STORIES } from './data/stories'
+import { sourcedRecordCount, validateGraph, validateStories } from './data/validate'
 import { computeVisible, defaultFilters, type FilterState } from './lib/filter'
 import { exportCsv, exportJson } from './lib/export'
 import type { DataLang } from './lib/i18n'
@@ -9,6 +10,7 @@ import Toolbar from './components/Toolbar'
 import TimeSlider from './components/TimeSlider'
 import EvidencePanel from './components/EvidencePanel'
 import SourcesModal from './components/SourcesModal'
+import { StoryBar, StoryPanel } from './components/StoryPanel'
 import MapView from './views/MapView'
 import NetworkView from './views/NetworkView'
 
@@ -18,19 +20,51 @@ export default function App() {
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [hoveredId, setHoveredId] = useState<string | null>(null)
   const [showSources, setShowSources] = useState(false)
+  const [activeStoryId, setActiveStoryId] = useState<string | null>(null)
+  const [storyStep, setStoryStep] = useState(0)
 
   // Enforce the sourcing/continuity disciplines at runtime (dev console).
   useEffect(() => {
-    const issues = validateGraph()
+    const issues = [...validateGraph(), ...validateStories()]
     if (issues.length > 0) {
       console.warn('[dataset] integrity issues:', issues)
     } else {
       console.info(
         `[dataset] OK — ${dataset.nodes.length} nodes, ${dataset.edges.length} edges, ` +
-          `${allSources().length} distinct sources; all records sourced; no continuity relations.`,
+          `${allSources().length} distinct sources, ${STORIES.length} story routes; ` +
+          'all records sourced; no continuity relations.',
       )
     }
   }, [])
+
+  const activeStory = activeStoryId
+    ? STORIES.find((s) => s.id === activeStoryId) ?? null
+    : null
+
+  /** Apply a story step: select its focus, sync time slider + concept filter. */
+  function goToStep(story: typeof STORIES[number], index: number) {
+    const step = story.steps[index]
+    setStoryStep(index)
+    setSelectedId(step.focus)
+    setFilters((f) => ({
+      ...f,
+      year: step.year,
+      conceptFocus: step.conceptFocus ?? null,
+    }))
+  }
+
+  function startStory(id: string) {
+    const story = STORIES.find((s) => s.id === id)
+    if (!story) return
+    setActiveStoryId(id)
+    goToStep(story, 0)
+  }
+
+  function exitStory() {
+    setActiveStoryId(null)
+    setStoryStep(0)
+    setFilters((f) => ({ ...f, year: null, conceptFocus: null }))
+  }
 
   const graph = useMemo(() => computeVisible(filters), [filters])
   const { sourced, total } = sourcedRecordCount()
@@ -67,8 +101,24 @@ export default function App() {
         setYear={(year) => setFilters({ ...filters, year })}
       />
 
+      <StoryBar
+        activeStoryId={activeStoryId}
+        lang={lang}
+        onStart={startStory}
+        onExit={exitStory}
+      />
+
       <div className="app-main">
         <div className="views">
+          {activeStory && (
+            <StoryPanel
+              story={activeStory}
+              stepIndex={storyStep}
+              lang={lang}
+              onStep={(i) => goToStep(activeStory, i)}
+              onExit={exitStory}
+            />
+          )}
           <section className="panel map-panel">
             <div className="panel-title">Site atlas</div>
             <MapView

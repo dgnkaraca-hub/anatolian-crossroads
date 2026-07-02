@@ -1,0 +1,298 @@
+/**
+ * Story routes (BRIEF §5): guided walkthroughs across the macro graph.
+ *
+ * A story is data, not code: each step focuses one existing node, optionally
+ * sets the time slider and concept filter, and carries a bilingual narrative
+ * plus bibliography keys. validateStories() enforces that every step points
+ * at a real node and cites real sources. Narratives stay comparative —
+ * they describe stops on a route, never continuity between them.
+ */
+
+export interface StoryStep {
+  /** Node id to select (site, concept or interpretation). */
+  focus: string
+  /** Time-slider year (negative = BCE), or null for the full range. */
+  year: number | null
+  /** Optional concept filter to apply while on this step. */
+  conceptFocus?: string
+  narrative_en: string
+  narrative_tr: string
+  sources: string[]
+}
+
+export interface StoryRoute {
+  id: string
+  title_en: string
+  title_tr: string
+  intro_en: string
+  intro_tr: string
+  steps: StoryStep[]
+}
+
+export const STORIES: StoryRoute[] = [
+  {
+    id: 'stone-to-inscription',
+    title_en: 'From Stone Symbols to Royal Inscriptions',
+    title_tr: 'Taş Sembollerden Kraliyet Yazıtlarına',
+    intro_en:
+      'The long arc of the atlas: how communities fixed meaning in stone before writing, and how, millennia later, stone learned to speak in the first person. A comparative route — each stop is its own world.',
+    intro_tr:
+      'Atlasın uzun yayı: topluluklar yazıdan önce anlamı taşa nasıl sabitledi ve binyıllar sonra taş birinci tekil şahısla konuşmayı nasıl öğrendi. Karşılaştırmalı bir rota — her durak kendi başına bir dünya.',
+    steps: [
+      {
+        focus: 'gobekli-tepe',
+        year: -9400,
+        narrative_en:
+          'Hunter-gatherers raise monumental enclosures of carved T-pillars: predators, birds, snakes — a dense symbol system with no script behind it. Meaning is fixed in stone, but the code is lost to us.',
+        narrative_tr:
+          'Avcı-toplayıcılar kabartmalı T-dikilitaşlardan anıtsal yapılar yükseltir: yırtıcılar, kuşlar, yılanlar — arkasında hiçbir yazı olmayan yoğun bir sembol sistemi. Anlam taşa sabitlenmiştir ama kod bize kapalıdır.',
+        sources: ['UNESCO-1572', 'SCHMIDT-2010'],
+      },
+      {
+        focus: 'sayburc',
+        year: -8500,
+        narrative_en:
+          'A relief at Sayburç sets figures in relation: leopards flank a man; another man faces a bull. The primary publication reads it as one of the earliest narrative scenes — images arranged to be read.',
+        narrative_tr:
+          'Sayburç\'taki bir kabartma figürleri ilişkiye sokar: leoparlar bir adamı kuşatır; bir başkası boğayla yüzleşir. İlk yayın bunu en erken anlatı sahnelerinden biri olarak okur — okunmak için dizilmiş imgeler.',
+        sources: ['OZDOGAN-2022'],
+      },
+      {
+        focus: 'catalhoyuk',
+        year: -7000,
+        narrative_en:
+          'At Çatalhöyük symbolism moves indoors. Bull skulls, wall paintings and burials beneath the floors bind each generation of a house to the last — community memory kept at household scale.',
+        narrative_tr:
+          'Çatalhöyük\'te sembolizm eve taşınır. Boğa başları, duvar resimleri ve taban altı gömüler her ev kuşağını bir öncekine bağlar — hane ölçeğinde tutulan topluluk belleği.',
+        sources: ['UNESCO-1405'],
+      },
+      {
+        focus: 'arslantepe',
+        year: -3400,
+        narrative_en:
+          'At Arslantepe a palace administers goods with seal impressions: thousands of clay counter-marks record who delivered and who received. Recording precedes writing.',
+        narrative_tr:
+          'Arslantepe\'de bir saray malları mühür baskılarıyla yönetir: binlerce kil baskı kimin teslim ettiğini, kimin aldığını kaydeder. Kayıt, yazıdan önce gelir.',
+        sources: ['UNESCO-1622'],
+      },
+      {
+        focus: 'kultepe',
+        year: -1900,
+        narrative_en:
+          'At Kültepe-Kaneš, Assyrian merchants bring cuneiform. Contracts, loans and family letters — for the first time in Anatolia, individual voices survive in writing.',
+        narrative_tr:
+          'Kültepe-Kaneš\'te Asurlu tüccarlar çivi yazısını getirir. Sözleşmeler, borçlar ve aile mektupları — Anadolu\'da ilk kez bireysel sesler yazıyla günümüze ulaşır.',
+        sources: ['UNESCO-MOW-KULTEPE', 'UNESCO-T5905'],
+      },
+      {
+        focus: 'hattusa',
+        year: -1300,
+        narrative_en:
+          'Hattuşa institutionalizes memory at imperial scale: multilingual archives, a monumental urban plan, and gods carved in procession at the Yazılıkaya rock sanctuary.',
+        narrative_tr:
+          'Hattuşa belleği imparatorluk ölçeğinde kurumsallaştırır: çok dilli arşivler, anıtsal kent planı ve Yazılıkaya kaya tapınağında alay halinde kazınmış tanrılar.',
+        sources: ['UNESCO-377'],
+      },
+      {
+        focus: 'samal',
+        year: -730,
+        narrative_en:
+          'At Sam\'al, royal inscriptions speak in the first person — and the Kuttamuwa stele even locates a man\'s soul in the stone that bears his words. The arc closes: stone no longer only shows, it speaks.',
+        narrative_tr:
+          'Sam\'al\'da kraliyet yazıtları birinci tekil şahısla konuşur — Kuttamuwa steli bir adamın ruhunu, sözlerini taşıyan taşın içine bile yerleştirir. Yay kapanır: taş artık yalnızca göstermez, konuşur.',
+        sources: ['ZINCIRLI-EXP', 'ISAC-KUTTAMUWA'],
+      },
+    ],
+  },
+  {
+    id: 'written-memory',
+    title_en: 'The Rise of Written Memory',
+    title_tr: 'Yazılı Belleğin Yükselişi',
+    intro_en:
+      'How does remembering become an institution? This route follows the recording technologies: seals, tablets, archives, and bilingual monuments.',
+    intro_tr:
+      'Hatırlamak nasıl bir kuruma dönüşür? Bu rota kayıt teknolojilerini izler: mühürler, tabletler, arşivler ve çift dilli anıtlar.',
+    steps: [
+      {
+        focus: 'concept-memory',
+        year: null,
+        conceptFocus: 'concept-memory',
+        narrative_en:
+          'Before script, memory lives in practice: houses rebuilt in place, monuments deliberately buried, feasts repeated for the dead. The highlighted sites are those where remembering is demonstrably deliberate.',
+        narrative_tr:
+          'Yazıdan önce bellek pratikte yaşar: yerinde yeniden kurulan evler, bilinçle gömülen anıtlar, ölüler için yinelenen ziyafetler. Vurgulanan yerleşimler, hatırlamanın kanıtlanabilir biçimde bilinçli olduğu yerlerdir.',
+        sources: ['AC-BRIEF'],
+      },
+      {
+        focus: 'arslantepe',
+        year: -3400,
+        narrative_en:
+          'Administrative memory without a single written word: at Arslantepe, sealings archive transactions at the palace gate. The system remembers so that people do not have to.',
+        narrative_tr:
+          'Tek bir yazılı sözcük olmadan yönetsel bellek: Arslantepe\'de mühür baskıları saray kapısındaki işlemleri arşivler. İnsanlar hatırlamak zorunda kalmasın diye sistem hatırlar.',
+        sources: ['UNESCO-1622'],
+      },
+      {
+        focus: 'kultepe',
+        year: -1900,
+        narrative_en:
+          'The merchant archives of Kaneš are private memory: debts, partnerships, marriages, quarrels. Memory becomes a legal instrument that can be stored, copied and enforced.',
+        narrative_tr:
+          'Kaneš\'in tüccar arşivleri özel bellektir: borçlar, ortaklıklar, evlilikler, kavgalar. Bellek; saklanabilen, kopyalanabilen ve hükmü uygulanabilen hukuki bir araca dönüşür.',
+        sources: ['UNESCO-MOW-KULTEPE'],
+      },
+      {
+        focus: 'hattusa',
+        year: -1300,
+        narrative_en:
+          'The state archive: treaties, rituals and annals kept in several languages. Memory is curated by scribes as an arm of power — what is filed is what happened.',
+        narrative_tr:
+          'Devlet arşivi: birden çok dilde tutulan antlaşmalar, ritüeller ve yıllıklar. Bellek, iktidarın bir kolu olarak kâtiplerce düzenlenir — dosyalanan şey, olan şeydir.',
+        sources: ['UNESCO-377'],
+      },
+      {
+        focus: 'concept-writing',
+        year: null,
+        conceptFocus: 'concept-writing',
+        narrative_en:
+          'Writing spreads along different channels — administrative, commercial, monumental. Six sites touch this concept, each with a different genre of record.',
+        narrative_tr:
+          'Yazı farklı kanallardan yayılır — yönetsel, ticari, anıtsal. Altı yerleşim bu kavrama dokunur; her birinde farklı bir kayıt türü.',
+        sources: ['AC-BRIEF'],
+      },
+      {
+        focus: 'karatepe',
+        year: -700,
+        narrative_en:
+          'At Karatepe, Azatiwada addresses posterity in two languages at once. Written memory has become a public monument aimed at readers not yet born.',
+        narrative_tr:
+          'Karatepe\'de Azatiwada gelecek kuşaklara aynı anda iki dilde seslenir. Yazılı bellek, henüz doğmamış okurlara yönelmiş kamusal bir anıta dönüşmüştür.',
+        sources: ['MUZE-KARATEPE'],
+      },
+    ],
+  },
+  {
+    id: 'euphrates-corridor',
+    title_en: 'Euphrates Corridor of Power',
+    title_tr: 'Fırat İktidar Koridoru',
+    intro_en:
+      'One river, four millennia. Power concentrates where routes cross the water — the map view shows the corridor edges this route travels.',
+    intro_tr:
+      'Tek nehir, dört binyıl. İktidar, yolların suyu kestiği yerde yoğunlaşır — harita görünümü bu rotanın izlediği koridor kenarlarını gösterir.',
+    steps: [
+      {
+        focus: 'arslantepe',
+        year: -3400,
+        narrative_en:
+          'The earliest palace complex on the upper Euphrates: storage, redistribution and mass sealing. Power made architectural, at the point where the highland routes meet the river.',
+        narrative_tr:
+          'Yukarı Fırat\'taki en erken saray kompleksi: depolama, yeniden dağıtım ve toplu mühürleme. Dağlık yolların nehirle buluştuğu noktada mimarlığa dönüşmüş iktidar.',
+        sources: ['UNESCO-1622'],
+      },
+      {
+        focus: 'hattusa',
+        year: -1300,
+        narrative_en:
+          'The Hittite empire governs its Syrian lands through the river: the imperial road runs from the capital to the great crossing, held by a viceroy of the royal house.',
+        narrative_tr:
+          'Hitit imparatorluğu Suriye topraklarını nehir üzerinden yönetir: imparatorluk yolu başkentten büyük geçide uzanır; geçidi kraliyet hanedanından bir naip tutar.',
+        sources: ['UNESCO-377', 'HITTITEMON-KARKAMIS'],
+      },
+      {
+        focus: 'karkamis',
+        year: -1100,
+        narrative_en:
+          'Karkamış holds the crossing itself. Viceregal seat under Hatti, it outlives the empire\'s fall and rules on as the leading city-state of the Iron Age Euphrates.',
+        narrative_tr:
+          'Karkamış geçidin kendisini tutar. Hatti döneminde naiplik merkezi olan kent, imparatorluğun çöküşünden sonra da ayakta kalır ve Demir Çağı Fırat\'ının önde gelen kent devleti olarak hüküm sürer.',
+        sources: ['HITTITEMON-KARKAMIS'],
+      },
+      {
+        focus: 'concept-trade',
+        year: null,
+        conceptFocus: 'concept-trade',
+        narrative_en:
+          'The corridor is also an economy: crossings tax, store and redistribute. Trade and power are two readings of the same geography.',
+        narrative_tr:
+          'Koridor aynı zamanda bir ekonomidir: geçitler vergilendirir, depolar, yeniden dağıtır. Ticaret ve iktidar, aynı coğrafyanın iki ayrı okumasıdır.',
+        sources: ['AC-BRIEF'],
+      },
+      {
+        focus: 'samal',
+        year: -800,
+        narrative_en:
+          'West of the river, smaller kingdoms thrive in its shadow: Sam\'al grows on the north Syrian route that links the crossing to the Amanus passes.',
+        narrative_tr:
+          'Nehrin batısında küçük krallıklar onun gölgesinde serpilir: Sam\'al, geçidi Amanos geçitlerine bağlayan Kuzey Suriye yolu üzerinde büyür.',
+        sources: ['ZINCIRLI-EXP'],
+      },
+    ],
+  },
+  {
+    id: 'border-kingdoms',
+    title_en: 'Border Kingdoms and Multilingual Inscriptions',
+    title_tr: 'Sınır Krallıkları ve Çokdilli Yazıtlar',
+    intro_en:
+      'Small polities on imperial edges turn in-betweenness into identity — and into language choice. This route ends at the bilingual that unlocked a script.',
+    intro_tr:
+      'İmparatorluk kıyısındaki küçük devletler aradalığı kimliğe — ve dil seçimine — dönüştürür. Rota, bir yazıyı çözen çift dilli yazıtta son bulur.',
+    steps: [
+      {
+        focus: 'concept-border-kingdoms',
+        year: null,
+        conceptFocus: 'concept-border-kingdoms',
+        narrative_en:
+          'After Hatti\'s fall the frontier belongs to small kingdoms. Their position between spheres is not weakness but capital: routes, tolls and audiences in every direction.',
+        narrative_tr:
+          'Hatti\'nin çöküşünden sonra sınır boyu küçük krallıklarındır. Küreler arasındaki konumları zayıflık değil sermayedir: her yöne uzanan yollar, geçiş vergileri ve muhataplar.',
+        sources: ['AC-BRIEF'],
+      },
+      {
+        focus: 'karkamis',
+        year: -900,
+        narrative_en:
+          'Karkamış keeps monumental Luwian hieroglyphic display alive long after the empire that spread it — script as inheritance, deployed by a city-state for its own kings.',
+        narrative_tr:
+          'Karkamış, anıtsal Luvi hiyeroglif geleneğini onu yayan imparatorluktan çok sonra da sürdürür — bir kent devletinin kendi kralları için kullandığı miras yazı.',
+        sources: ['HITTITEMON-KARKAMIS'],
+      },
+      {
+        focus: 'samal',
+        year: -830,
+        narrative_en:
+          'Sam\'al\'s kings choose their languages deliberately: Kilamuwa writes in Phoenician, later kings in Sam\'alian and Aramaic. Code choice is politics carved in stone.',
+        narrative_tr:
+          'Sam\'al kralları dillerini bilinçle seçer: Kilamuwa Fenikece yazdırır, sonraki krallar Sam\'alca ve Aramice. Dil seçimi, taşa kazınmış siyasettir.',
+        sources: ['WSRP-KILAMUWA', 'ZINCIRLI-EXP'],
+      },
+      {
+        focus: 'interp-kuttamuwa-soul',
+        year: -730,
+        narrative_en:
+          'The Kuttamuwa stele orders feasts for "my soul that is in this stele" — at the border, even the afterlife is negotiated in writing. This stop is an interpretation node: the reading is kept apart from the stone.',
+        narrative_tr:
+          'Kuttamuwa steli "bu stelde olan ruhum" için ziyafetler buyurur — sınırda öte dünya bile yazıyla müzakere edilir. Bu durak bir yorum düğümüdür: okuma, taştan ayrı tutulur.',
+        sources: ['ISAC-KUTTAMUWA'],
+      },
+      {
+        focus: 'karatepe',
+        year: -700,
+        narrative_en:
+          'Azatiwada\'s fortress gates carry the same text in Phoenician and hieroglyphic Luwian — the bilingual that, millennia later, helped modern readers unlock the script.',
+        narrative_tr:
+          'Azatiwada\'nın kale kapıları aynı metni Fenikece ve hiyeroglif Luvice taşır — binyıllar sonra modern okurların yazıyı çözmesine yardım eden çift dilli yazıt.',
+        sources: ['MUZE-KARATEPE'],
+      },
+      {
+        focus: 'concept-multilingualism',
+        year: null,
+        conceptFocus: 'concept-multilingualism',
+        narrative_en:
+          'Four sites touch this concept, from merchant colonies to royal gates. Multilingualism is not an exception in this landscape — it is the region\'s oldest constant.',
+        narrative_tr:
+          'Tüccar kolonilerinden kraliyet kapılarına dört yerleşim bu kavrama dokunur. Çokdillilik bu coğrafyada istisna değil — bölgenin en eski değişmezidir.',
+        sources: ['AC-BRIEF'],
+      },
+    ],
+  },
+]
