@@ -11,6 +11,7 @@ import TimeSlider from './components/TimeSlider'
 import EvidencePanel from './components/EvidencePanel'
 import SourcesModal from './components/SourcesModal'
 import { StoryBar, StoryPanel } from './components/StoryPanel'
+import ListenPanel from './components/ListenPanel'
 import MapView from './views/MapView'
 import NetworkView from './views/NetworkView'
 
@@ -22,6 +23,7 @@ export default function App() {
   const [showSources, setShowSources] = useState(false)
   const [activeStoryId, setActiveStoryId] = useState<string | null>(null)
   const [storyStep, setStoryStep] = useState(0)
+  const [showListen, setShowListen] = useState(false)
 
   // Enforce the sourcing/continuity disciplines at runtime (dev console).
   useEffect(() => {
@@ -106,7 +108,15 @@ export default function App() {
         lang={lang}
         onStart={startStory}
         onExit={exitStory}
-      />
+      >
+        <button
+          className={`chip listen-chip${showListen ? ' on' : ''}`}
+          onClick={() => setShowListen((v) => !v)}
+          title="Sonification: play the atlas as sound"
+        >
+          ♫ listen
+        </button>
+      </StoryBar>
 
       <div className="app-main">
         <div className="views">
@@ -117,6 +127,12 @@ export default function App() {
               lang={lang}
               onStep={(i) => goToStep(activeStory, i)}
               onExit={exitStory}
+            />
+          )}
+          {showListen && (
+            <ListenPanel
+              onYear={(year) => setFilters((f) => ({ ...f, year }))}
+              onClose={() => setShowListen(false)}
             />
           )}
           <section className="panel map-panel">

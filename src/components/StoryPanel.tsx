@@ -18,9 +18,11 @@ interface BarProps {
   lang: DataLang
   onStart: (id: string) => void
   onExit: () => void
+  /** Extra controls rendered at the right edge of the bar (e.g. listen). */
+  children?: React.ReactNode
 }
 
-export function StoryBar({ activeStoryId, lang, onStart, onExit }: BarProps) {
+export function StoryBar({ activeStoryId, lang, onStart, onExit, children }: BarProps) {
   return (
     <div className="story-bar">
       <span className="toolbar-label">Story routes</span>
@@ -36,6 +38,7 @@ export function StoryBar({ activeStoryId, lang, onStart, onExit }: BarProps) {
           </button>
         )
       })}
+      {children && <span className="story-bar-right">{children}</span>}
     </div>
   )
 }

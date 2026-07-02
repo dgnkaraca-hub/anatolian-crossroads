@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://gexf.net/1.3" version="1.3">
+  <meta>
+    <creator>Anatolian Crossroads</creator>
+    <description>Kültepe-Kaneš — the Pūšu-kēn family network — every node and edge sourced; see sources.md</description>
+  </meta>
+  <graph defaultedgetype="directed">
+    <attributes class="node">
+      <attribute id="type" title="type" type="string"/>
+      <attribute id="confidence" title="confidence" type="string"/>
+      <attribute id="date_start" title="date_start" type="integer"/>
+      <attribute id="date_end" title="date_end" type="integer"/>
+      <attribute id="evidence" title="evidence" type="string"/>
+      <attribute id="sources" title="sources" type="string"/>
+    </attributes>
+    <attributes class="edge">
+      <attribute id="e_relation" title="relation" type="string"/>
+      <attribute id="e_confidence" title="confidence" type="string"/>
+    </attributes>
+    <nodes>
+      <node id="assur" label="Assur">
+      <attvalues>
+        <attvalue for="type" value="site"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="LARSEN-2015; UNESCO-MOW-KULTEPE"/>
+      </attvalues>
+      </node>
+      <node id="kanesh" label="Kaneš (Kültepe)">
+      <attvalues>
+        <attvalue for="type" value="site"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="UNESCO-MOW-KULTEPE; UNESCO-T5905"/>
+      </attvalues>
+      </node>
+      <node id="karum-ii" label="Kārum Kaneš level II">
+      <attvalues>
+        <attvalue for="type" value="phase"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-1970"/>
+        <attvalue for="date_end" value="-1835"/>
+        <attvalue for="sources" value="BARJAMOVIC-HERTEL-LARSEN-2012; UNESCO-MOW-KULTEPE"/>
+      </attvalues>
+      </node>
+      <node id="karum-ib" label="Kārum Kaneš level Ib">
+      <attvalues>
+        <attvalue for="type" value="phase"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-1832"/>
+        <attvalue for="date_end" value="-1700"/>
+        <attvalue for="sources" value="BARJAMOVIC-HERTEL-LARSEN-2012"/>
+      </attvalues>
+      </node>
+      <node id="pushu-ken" label="Pūšu-kēn">
+      <attvalues>
+        <attvalue for="type" value="actor"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-1900"/>
+        <attvalue for="date_end" value="-1862"/>
+        <attvalue for="sources" value="LARSEN-2015; STRATFORD-2017; MICHEL-2020"/>
+      </attvalues>
+      </node>
+      <node id="lamassi" label="Lamassī">
+      <attvalues>
+        <attvalue for="type" value="actor"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-1900"/>
+        <attvalue for="date_end" value="-1865"/>
+        <attvalue for="sources" value="MICHEL-2020; MICHEL-ANETODAY"/>
+      </attvalues>
+      </node>
+      <node id="suejja-father" label="Su'ejja (the elder)">
+      <attvalues>
+        <attvalue for="type" value="actor"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="LARSEN-2015"/>
+      </attvalues>
+      </node>
+      <node id="ahaha" label="Ahaha">
+      <attvalues>
+        <attvalue for="type" value="actor"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-1885"/>
+        <attvalue for="date_end" value="-1850"/>
+        <attvalue for="sources" value="MICHEL-2020; FACTGRID-KANESH"/>
+      </attvalues>
+      </node>
+      <node id="buzazu" label="Buzāzu">
+      <attvalues>
+        <attvalue for="type" value="actor"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-1880"/>
+        <attvalue for="date_end" value="-1840"/>
+        <attvalue for="sources" value="MICHEL-2020; LARSEN-2015"/>
+      </attvalues>
+      </node>
+      <node id="assur-mutappil" label="Aššur-mūtappil">
+      <attvalues>
+        <attvalue for="type" value="actor"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-1880"/>
+        <attvalue for="date_end" value="-1840"/>
+        <attvalue for="sources" value="MICHEL-2020"/>
+      </attvalues>
+      </node>
+      <node id="suejja-ii" label="Su'ejja (the younger)">
+      <attvalues>
+        <attvalue for="type" value="actor"/>
+        <attvalue for="confidence" value="medium"/>
+        <attvalue for="date_start" value="-1885"/>
+        <attvalue for="date_end" value="-1845"/>
+        <attvalue for="sources" value="MICHEL-2020; MICHEL-ANETODAY"/>
+      </attvalues>
+      </node>
+      <node id="ikun-pasha" label="Ikūn-pāša">
+      <attvalues>
+        <attvalue for="type" value="actor"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-1880"/>
+        <attvalue for="date_end" value="-1840"/>
+        <attvalue for="sources" value="MICHEL-2020"/>
+      </attvalues>
+      </node>
+      <node id="shalim-ahum" label="Šalim-aḫum">
+      <attvalues>
+        <attvalue for="type" value="actor"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-1900"/>
+        <attvalue for="date_end" value="-1875"/>
+        <attvalue for="sources" value="STRATFORD-2017"/>
+      </attvalues>
+      </node>
+      <node id="imdi-ilum" label="Imdī-ilum">
+      <attvalues>
+        <attvalue for="type" value="actor"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-1895"/>
+        <attvalue for="date_end" value="-1860"/>
+        <attvalue for="sources" value="LARSEN-2015"/>
+      </attvalues>
+      </node>
+      <node id="ilabrat-bani" label="Ilabrat-bāni">
+      <attvalues>
+        <attvalue for="type" value="actor"/>
+        <attvalue for="confidence" value="medium"/>
+        <attvalue for="date_start" value="-1895"/>
+        <attvalue for="date_end" value="-1885"/>
+        <attvalue for="sources" value="STRATFORD-2017"/>
+      </attvalues>
+      </node>
+      <node id="pushu-ken-archive" label="Pūšu-kēn archive (reconstructed)">
+      <attvalues>
+        <attvalue for="type" value="text"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-1900"/>
+        <attvalue for="date_end" value="-1850"/>
+        <attvalue for="sources" value="STRATFORD-2017; LARSEN-2015; UNESCO-MOW-KULTEPE"/>
+      </attvalues>
+      </node>
+      <node id="lamassi-letters" label="Letters of Lamassī">
+      <attvalues>
+        <attvalue for="type" value="text"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="date_start" value="-1895"/>
+        <attvalue for="date_end" value="-1865"/>
+        <attvalue for="sources" value="MICHEL-2020; MICHEL-ANETODAY"/>
+      </attvalues>
+      </node>
+      <node id="vengeance-dossier" label="&quot;Year of Vengeance&quot; dossier">
+      <attvalues>
+        <attvalue for="type" value="text"/>
+        <attvalue for="confidence" value="medium"/>
+        <attvalue for="date_start" value="-1894"/>
+        <attvalue for="date_end" value="-1892"/>
+        <attvalue for="sources" value="STRATFORD-2017"/>
+      </attvalues>
+      </node>
+      <node id="estate-dossier" label="Inheritance dossier of the heirs">
+      <attvalues>
+        <attvalue for="type" value="text"/>
+        <attvalue for="confidence" value="medium"/>
+        <attvalue for="date_start" value="-1862"/>
+        <attvalue for="date_end" value="-1850"/>
+        <attvalue for="sources" value="MICHEL-2020; LARSEN-2015"/>
+      </attvalues>
+      </node>
+      <node id="concept-karum" label="Kārum institution">
+      <attvalues>
+        <attvalue for="type" value="concept"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="LARSEN-2015; UNESCO-MOW-KULTEPE"/>
+      </attvalues>
+      </node>
+      <node id="concept-caravan-trade" label="Caravan trade">
+      <attvalues>
+        <attvalue for="type" value="concept"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="LARSEN-2015; UNESCO-MOW-KULTEPE"/>
+      </attvalues>
+      </node>
+      <node id="concept-naruqqu" label="Naruqqu financing">
+      <attvalues>
+        <attvalue for="type" value="concept"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="LARSEN-2015"/>
+      </attvalues>
+      </node>
+      <node id="concept-textile-production" label="Household textile production">
+      <attvalues>
+        <attvalue for="type" value="concept"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="MICHEL-2020; MICHEL-ANETODAY"/>
+      </attvalues>
+      </node>
+      <node id="concept-private-archive" label="Private written memory">
+      <attvalues>
+        <attvalue for="type" value="concept"/>
+        <attvalue for="confidence" value="high"/>
+        <attvalue for="sources" value="UNESCO-MOW-KULTEPE"/>
+      </attvalues>
+      </node>
+      <node id="interp-lamassi-comanager" label="Lamassī as co-manager of the firm">
+      <attvalues>
+        <attvalue for="type" value="interpretation"/>
+        <attvalue for="confidence" value="medium"/>
+        <attvalue for="sources" value="MICHEL-2020; MICHEL-ANETODAY"/>
+      </attvalues>
+      </node>
+      <node id="interp-vengeance-reconstruction" label="The &quot;Year of Vengeance&quot; as narrative reconstruction">
+      <attvalues>
+        <attvalue for="type" value="interpretation"/>
+        <attvalue for="confidence" value="medium"/>
+        <attvalue for="sources" value="STRATFORD-2017"/>
+      </attvalues>
+      </node>
+      <node id="interp-naruqqu-jointstock" label="Naruqqu as an early joint-stock analogue">
+      <attvalues>
+        <attvalue for="type" value="interpretation"/>
+        <attvalue for="confidence" value="speculative"/>
+        <attvalue for="sources" value="LARSEN-2015"/>
+      </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge id="fam-suejja-pushuken" source="suejja-father" target="pushu-ken" label="father_of">
+        <attvalues>
+          <attvalue for="e_relation" value="father_of"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="fam-pushuken-lamassi" source="pushu-ken" target="lamassi" label="spouse_of">
+        <attvalues>
+          <attvalue for="e_relation" value="spouse_of"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="fam-pushuken-ahaha" source="pushu-ken" target="ahaha" label="father_of">
+        <attvalues>
+          <attvalue for="e_relation" value="father_of"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="fam-pushuken-buzazu" source="pushu-ken" target="buzazu" label="father_of">
+        <attvalues>
+          <attvalue for="e_relation" value="father_of"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="fam-pushuken-am" source="pushu-ken" target="assur-mutappil" label="father_of">
+        <attvalues>
+          <attvalue for="e_relation" value="father_of"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="fam-pushuken-suejja2" source="pushu-ken" target="suejja-ii" label="father_of">
+        <attvalues>
+          <attvalue for="e_relation" value="father_of"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="fam-pushuken-ikunpasha" source="pushu-ken" target="ikun-pasha" label="father_of">
+        <attvalues>
+          <attvalue for="e_relation" value="father_of"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="fam-lamassi-ahaha" source="lamassi" target="ahaha" label="mother_of">
+        <attvalues>
+          <attvalue for="e_relation" value="mother_of"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="fam-lamassi-buzazu" source="lamassi" target="buzazu" label="mother_of">
+        <attvalues>
+          <attvalue for="e_relation" value="mother_of"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="fam-lamassi-am" source="lamassi" target="assur-mutappil" label="mother_of">
+        <attvalues>
+          <attvalue for="e_relation" value="mother_of"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="fam-lamassi-suejja2" source="lamassi" target="suejja-ii" label="mother_of">
+        <attvalues>
+          <attvalue for="e_relation" value="mother_of"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="fam-lamassi-ikunpasha" source="lamassi" target="ikun-pasha" label="mother_of">
+        <attvalues>
+          <attvalue for="e_relation" value="mother_of"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bus-pushuken-shalimahum" source="pushu-ken" target="shalim-ahum" label="agent_of">
+        <attvalues>
+          <attvalue for="e_relation" value="agent_of"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="bus-imdiilum-pushuken" source="imdi-ilum" target="pushu-ken" label="partner_of">
+        <attvalues>
+          <attvalue for="e_relation" value="partner_of"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="bus-ahaha-invest" source="ahaha" target="concept-naruqqu" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="res-pushuken-kanesh" source="pushu-ken" target="kanesh" label="based_in">
+        <attvalues>
+          <attvalue for="e_relation" value="based_in"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="res-lamassi-assur" source="lamassi" target="assur" label="based_in">
+        <attvalues>
+          <attvalue for="e_relation" value="based_in"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="res-ahaha-assur" source="ahaha" target="assur" label="based_in">
+        <attvalues>
+          <attvalue for="e_relation" value="based_in"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="res-shalimahum-assur" source="shalim-ahum" target="assur" label="based_in">
+        <attvalues>
+          <attvalue for="e_relation" value="based_in"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="res-buzazu-kanesh" source="buzazu" target="kanesh" label="based_in">
+        <attvalues>
+          <attvalue for="e_relation" value="based_in"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="res-imdiilum-kanesh" source="imdi-ilum" target="kanesh" label="based_in">
+        <attvalues>
+          <attvalue for="e_relation" value="based_in"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="txt-lamassi-wrote" source="lamassi" target="lamassi-letters" label="wrote">
+        <attvalues>
+          <attvalue for="e_relation" value="wrote"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="txt-letters-in-archive" source="pushu-ken-archive" target="lamassi-letters" label="contains">
+        <attvalues>
+          <attvalue for="e_relation" value="contains"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="txt-vengeance-shalimahum" source="vengeance-dossier" target="shalim-ahum" label="mentions">
+        <attvalues>
+          <attvalue for="e_relation" value="mentions"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="txt-vengeance-pushuken" source="vengeance-dossier" target="pushu-ken" label="mentions">
+        <attvalues>
+          <attvalue for="e_relation" value="mentions"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="txt-vengeance-ilabratbani" source="vengeance-dossier" target="ilabrat-bani" label="mentions">
+        <attvalues>
+          <attvalue for="e_relation" value="mentions"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="txt-estate-ahaha" source="estate-dossier" target="ahaha" label="mentions">
+        <attvalues>
+          <attvalue for="e_relation" value="mentions"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="txt-estate-buzazu" source="estate-dossier" target="buzazu" label="mentions">
+        <attvalues>
+          <attvalue for="e_relation" value="mentions"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="txt-estate-ikunpasha" source="estate-dossier" target="ikun-pasha" label="mentions">
+        <attvalues>
+          <attvalue for="e_relation" value="mentions"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="dat-ib-above-ii" source="karum-ib" target="karum-ii" label="stratigraphically_above">
+        <attvalues>
+          <attvalue for="e_relation" value="stratigraphically_above"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="dat-letters" source="lamassi-letters" target="karum-ii" label="dated_to">
+        <attvalues>
+          <attvalue for="e_relation" value="dated_to"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="dat-pushuken" source="pushu-ken" target="karum-ii" label="dated_to">
+        <attvalues>
+          <attvalue for="e_relation" value="dated_to"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="dat-lamassi" source="lamassi" target="karum-ii" label="dated_to">
+        <attvalues>
+          <attvalue for="e_relation" value="dated_to"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="dat-archive" source="pushu-ken-archive" target="karum-ii" label="dated_to">
+        <attvalues>
+          <attvalue for="e_relation" value="dated_to"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="dat-vengeance" source="vengeance-dossier" target="karum-ii" label="dated_to">
+        <attvalues>
+          <attvalue for="e_relation" value="dated_to"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="dat-estate" source="estate-dossier" target="karum-ii" label="dated_to">
+        <attvalues>
+          <attvalue for="e_relation" value="dated_to"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="con-kanesh-karum" source="kanesh" target="concept-karum" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-assur-caravan" source="assur" target="concept-caravan-trade" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-kanesh-caravan" source="kanesh" target="concept-caravan-trade" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-pushuken-caravan" source="pushu-ken" target="concept-caravan-trade" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-pushuken-naruqqu" source="pushu-ken" target="concept-naruqqu" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-lamassi-textile" source="lamassi" target="concept-textile-production" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-letters-textile" source="lamassi-letters" target="concept-textile-production" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-archive-private" source="pushu-ken-archive" target="concept-private-archive" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="con-letters-private" source="lamassi-letters" target="concept-private-archive" label="relates_to_concept">
+        <attvalues>
+          <attvalue for="e_relation" value="relates_to_concept"/>
+          <attvalue for="e_confidence" value="high"/>
+        </attvalues>
+      </edge>
+      <edge id="int-lamassi" source="lamassi" target="interp-lamassi-comanager" label="interpreted_as">
+        <attvalues>
+          <attvalue for="e_relation" value="interpreted_as"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="int-letters-lamassi" source="lamassi-letters" target="interp-lamassi-comanager" label="interpreted_as">
+        <attvalues>
+          <attvalue for="e_relation" value="interpreted_as"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="int-vengeance" source="vengeance-dossier" target="interp-vengeance-reconstruction" label="interpreted_as">
+        <attvalues>
+          <attvalue for="e_relation" value="interpreted_as"/>
+          <attvalue for="e_confidence" value="medium"/>
+        </attvalues>
+      </edge>
+      <edge id="int-naruqqu" source="concept-naruqqu" target="interp-naruqqu-jointstock" label="interpreted_as">
+        <attvalues>
+          <attvalue for="e_relation" value="interpreted_as"/>
+          <attvalue for="e_confidence" value="speculative"/>
+        </attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>

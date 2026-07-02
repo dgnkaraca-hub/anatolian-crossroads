@@ -10,6 +10,8 @@
     "preview": "vite preview",
     "typecheck": "tsc -b --noEmit",
     "export-data": "node scripts/export-data.mjs",
+    "export-gexf": "node scripts/export-gexf.mjs",
+    "print-plates": "node scripts/print-plates.mjs",
     "assemble-site": "node scripts/assemble-site.mjs"
   },
   "dependencies": {

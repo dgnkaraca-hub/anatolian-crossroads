@@ -300,6 +300,76 @@
   white-space: nowrap;
 }
 
+.story-bar-right {
+  margin-left: auto;
+  display: flex;
+  gap: 6px;
+}
+
+/* Listen panel (sonification) ---------------------------------------------- */
+
+.listen-panel {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  z-index: 10;
+  width: min(360px, calc(100% - 32px));
+  background: var(--bg-elevated);
+  border: 1px solid var(--type-concept);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 12px 16px;
+}
+
+.listen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.listen-panel h3 {
+  font-size: 15.5px;
+  margin: 2px 0 0;
+}
+
+.listen-framing {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin: 8px 0 10px;
+}
+
+.listen-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid var(--border);
+  padding-top: 9px;
+}
+
+.listen-controls select {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius-sm);
+  padding: 3px 8px;
+  font-size: 12px;
+}
+
+.listen-volume {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-faint);
+  font-size: 11.5px;
+  flex: 1;
+}
+
+.listen-volume input {
+  flex: 1;
+}
+
 /* Evidence panel connection groups */
 
 .connection-group-title {

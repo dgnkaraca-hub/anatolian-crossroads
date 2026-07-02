@@ -51,6 +51,17 @@ pre-literate and epigraphic networks*. Release/DOI steps:
 [`docs/RELEASE.md`](docs/RELEASE.md); citation metadata in
 [`CITATION.cff`](CITATION.cff) and [`.zenodo.json`](.zenodo.json).
 
+## Stretch tracks
+
+- **S1 · Sonification** — the "♫ listen" mode plays the atlas as sound
+  (Web Audio): a 60–300 s sweep of 9600→700 BCE that drives the shared time
+  slider; latitude → pitch, longitude → stereo, evidence class → timbre,
+  corridors → dyad events. Mapping spec: [`docs/SONIFICATION.md`](docs/SONIFICATION.md).
+- **S2 · Print series** — `npm run print-plates` renders three A3
+  etching-style plates from the datasets ([`prints/`](prints/));
+  `npm run export-gexf` writes Gephi-ready GEXF files (macro + Kültepe)
+  into `data/` for hand-tuned exhibition layouts.
+
 ## Disciplines (non-negotiable)
 
 1. Every node and edge carries non-empty `sources[]`; `validateGraph()`
