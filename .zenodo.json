@@ -1,0 +1,30 @@
+{
+  "title": "Anatolian Crossroads: A Memory Graph from Neolithic Symbols to Iron Age Inscriptions (macro dataset)",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "creators": [
+    {
+      "name": "Karaca, Doğan"
+    }
+  ],
+  "description": "Macro-level dataset of a two-level comparative digital-humanities network spanning 10 Anatolian and Upper Mesopotamian sites, 9600-700 BCE (Göbekli Tepe, Karahantepe, Sayburç, Çatalhöyük, Arslantepe, Kültepe-Kaneš, Hattuşa, Karkamış, Sam'al/Zincirli, Karatepe-Aslantaş). Sites connect only through geographic corridors, explicit comparative pairs and nine shared concept nodes; interpretive claims are isolated in an interpretation layer. Every node and edge carries sources and a four-tier confidence value (high/medium/low/speculative); no cultural-continuity relations exist in the schema. Files: full JSON dataset with bibliography, flat CSV node/edge tables, and four bilingual (EN/TR) story routes as sourced data. See docs/METHOD.md (\"Modelling uncertainty across pre-literate and epigraphic networks\") for the method note.",
+  "keywords": [
+    "digital humanities",
+    "network analysis",
+    "Anatolia",
+    "Upper Mesopotamia",
+    "Neolithic",
+    "Iron Age",
+    "epigraphy",
+    "uncertainty modelling",
+    "open data"
+  ],
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/dgnkaraca-hub/anatolian-crossroads",
+      "resource_type": "software"
+    }
+  ]
+}

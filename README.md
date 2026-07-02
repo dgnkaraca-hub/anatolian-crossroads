@@ -40,6 +40,17 @@ references, source keys and year ranges):
 3. Euphrates Corridor of Power
 4. Border Kingdoms and Multilingual Inscriptions
 
+## Open data
+
+The macro dataset is published in [`data/`](data/) (JSON + CSV + story
+routes), regenerated from the TypeScript source of truth with
+`npm run export-data` — the export refuses to run if validation fails.
+Data is licensed **CC BY 4.0**, code **MIT**. Method note:
+[`docs/METHOD.md`](docs/METHOD.md) — *Modelling uncertainty across
+pre-literate and epigraphic networks*. Release/DOI steps:
+[`docs/RELEASE.md`](docs/RELEASE.md); citation metadata in
+[`CITATION.cff`](CITATION.cff) and [`.zenodo.json`](.zenodo.json).
+
 ## Disciplines (non-negotiable)
 
 1. Every node and edge carries non-empty `sources[]`; `validateGraph()`

@@ -1,10 +1,11 @@
 /**
- * Open-data export: full dataset as JSON, nodes/edges as CSV (BRIEF §5).
- * Feeds Gephi (print-plate track) and the later Zenodo release.
+ * Open-data export from the UI: full dataset as JSON, nodes/edges as CSV
+ * (BRIEF §5). Serialization lives in serialize.ts so the repo's published
+ * data/ files (scripts/export-data.mjs) are identical to these downloads.
  */
 
-import type { GraphEdge, GraphNode } from '../types/schema'
 import { dataset } from '../data/graph'
+import { datasetToJson, edgesToCsv, nodesToCsv } from './serialize'
 
 function download(filename: string, content: string, mime: string) {
   const blob = new Blob([content], { type: mime })
@@ -17,39 +18,10 @@ function download(filename: string, content: string, mime: string) {
 }
 
 export function exportJson() {
-  download(
-    'anatolian-crossroads-macro.json',
-    JSON.stringify(dataset, null, 2),
-    'application/json',
-  )
+  download('anatolian-crossroads-macro.json', datasetToJson(dataset), 'application/json')
 }
-
-function csvCell(value: unknown): string {
-  if (value === undefined || value === null) return ''
-  const s = Array.isArray(value) ? value.join('; ') : String(value)
-  return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s
-}
-
-const NODE_COLUMNS: (keyof GraphNode)[] = [
-  'id', 'type', 'label_en', 'label_tr', 'date_start', 'date_end', 'lat', 'lng',
-  'modern_location', 'ancient_region', 'evidence_type', 'confidence',
-  'sources', 'notes',
-]
-
-const EDGE_COLUMNS: (keyof GraphEdge)[] = [
-  'id', 'source', 'target', 'relation', 'label_en', 'label_tr', 'confidence',
-  'sources', 'evidence_note',
-]
 
 export function exportCsv() {
-  const nodeRows = [
-    NODE_COLUMNS.join(','),
-    ...dataset.nodes.map((n) => NODE_COLUMNS.map((c) => csvCell(n[c])).join(',')),
-  ].join('\n')
-  const edgeRows = [
-    EDGE_COLUMNS.join(','),
-    ...dataset.edges.map((e) => EDGE_COLUMNS.map((c) => csvCell(e[c])).join(',')),
-  ].join('\n')
-  download('anatolian-crossroads-nodes.csv', nodeRows, 'text/csv')
-  download('anatolian-crossroads-edges.csv', edgeRows, 'text/csv')
+  download('anatolian-crossroads-nodes.csv', nodesToCsv(dataset), 'text/csv')
+  download('anatolian-crossroads-edges.csv', edgesToCsv(dataset), 'text/csv')
 }

@@ -1,0 +1,58 @@
+id,source,target,relation,label_en,label_tr,confidence,sources,evidence_note
+cor-gobekli-karahan,gobekli-tepe,karahantepe,corridor,Şanlıurfa plateau (Taş Tepeler),Şanlıurfa platosu (Taş Tepeler),high,TASTEPELER,Both sites belong to the same regional cluster of PPN sites investigated under the Taş Tepeler programme (~35 km apart).
+cor-karahan-sayburc,karahantepe,sayburc,corridor,Şanlıurfa plateau (Taş Tepeler),Şanlıurfa platosu (Taş Tepeler),high,TASTEPELER; OZDOGAN-2022,Sayburç is investigated within the same Şanlıurfa Neolithic research region.
+cor-arslantepe-karkamis,arslantepe,karkamis,corridor,Euphrates corridor,Fırat koridoru,high,UNESCO-1622; HITTITEMON-KARKAMIS,"Both sites sit on the Euphrates axis: Arslantepe in the upper valley, Karkamış at the great middle crossing. Geographic corridor only."
+cor-hattusa-karkamis,hattusa,karkamis,corridor,Hittite imperial road to the Euphrates frontier,Hitit imparatorluk yolu — Fırat sınırına,high,HITTITEMON-KARKAMIS; UNESCO-377,In the Late Bronze Age Karkamış was the seat of Hittite viceroys governing the Syrian territories from the Euphrates crossing.
+cor-kultepe-hattusa,kultepe,hattusa,corridor,Old Assyrian kārum network,Eski Asur kārum ağı,high,UNESCO-MOW-KULTEPE; UNESCO-T5905,The kārum trade network centred at Kaneš included a station at Hattuš; the route is documented in the Kültepe tablets.
+cor-samal-karatepe,samal,karatepe,corridor,Amanus passes / Cilician frontier,Amanos geçitleri / Kilikya sınır hattı,medium,ZINCIRLI-EXP; MUZE-KARATEPE,"Sam'al controls the eastern foot of the Amanus, Karatepe the Ceyhan valley to its west; the corridor is the mountain-pass axis between them."
+cor-karkamis-samal,karkamis,samal,corridor,North Syrian route,Kuzey Suriye yolu,medium,HITTITEMON-KARKAMIS; ZINCIRLI-EXP,East-west route linking the Euphrates crossing to the Amanus foothills across the Iron Age city-state landscape.
+cmp-gobekli-sayburc,gobekli-tepe,sayburc,compares_with,Shared image repertoire,Ortak imge dağarcığı,high,OZDOGAN-2022,"The Sayburç publication explicitly compares the relief's leopards, bull and human figures with the Göbekli Tepe / Urfa-region repertoire."
+cmp-gobekli-catalhoyuk,gobekli-tepe,catalhoyuk,compares_with,Monumental vs. household symbolism,Anıtsal ve hane sembolizmi karşılaştırması,medium,UNESCO-1572; UNESCO-1405,A standard comparative pair in Neolithic scholarship (wild-animal imagery in communal monuments vs. domestic contexts). Comparison only; the sites are separated by centuries and 500 km.
+cmp-samal-karatepe,samal,karatepe,compares_with,Border kingdoms with gate sculpture and display inscriptions,Kapı heykelleri ve anıt yazıtlı sınır krallıkları,high,ZINCIRLI-EXP; MUZE-KARATEPE; WSRP-KILAMUWA,Both are small Iron Age polities using sculpted gateways and Phoenician-language royal inscriptions (Kilamuwa; Azatiwada) for self-presentation.
+cmp-karkamis-karatepe,karkamis,karatepe,compares_with,Luwian hieroglyphic monumental tradition,Luvi hiyeroglif anıt geleneği,high,HITTITEMON-KARKAMIS; MUZE-KARATEPE,Both sites carry monumental Luwian hieroglyphic inscriptions with reliefs; Karatepe adds the Phoenician bilingual.
+cmp-arslantepe-kultepe,arslantepe,kultepe,compares_with,Administrative technologies: sealing vs. writing,Yönetim teknolojileri: mühürleme ve yazı karşılaştırması,medium,UNESCO-1622; UNESCO-T5905,Comparative pair on the administration-to-writing trajectory (mass sealing systems vs. full cuneiform archives). No direct link between the sites is claimed.
+con-gobekli-tepe--ritual,gobekli-tepe,concept-ritual,relates_to_concept,,,high,UNESCO-1572,Monumental enclosures interpreted as communal/ritual gathering places (OUV statement).
+con-karahantepe--ritual,karahantepe,concept-ritual,relates_to_concept,,,high,TASTEPELER,Special-purpose rock-cut structures with pillars and sculpture.
+con-sayburc--ritual,sayburc,concept-ritual,relates_to_concept,,,medium,OZDOGAN-2022,Relief decorates a communal (special) building within the settlement.
+con-catalhoyuk--ritual,catalhoyuk,concept-ritual,relates_to_concept,,,high,UNESCO-1405,"Ritual installations (bucrania, paintings, burial rites) inside houses."
+con-hattusa--ritual,hattusa,concept-ritual,relates_to_concept,,,high,UNESCO-377,Temples in the city and the Yazılıkaya rock sanctuary with its god processions.
+con-gobekli-tepe--body,gobekli-tepe,concept-body,relates_to_concept,,,medium,SCHMIDT-2010,"Central pillars carry carved arms, hands and belts (see interpretation node)."
+con-karahantepe--body,karahantepe,concept-body,relates_to_concept,,,high,TASTEPELER,Human sculpture and the chamber with human-head protomes.
+con-sayburc--body,sayburc,concept-body,relates_to_concept,,,high,OZDOGAN-2022,Human figures are protagonists of the relief scene.
+con-catalhoyuk--body,catalhoyuk,concept-body,relates_to_concept,,,high,UNESCO-1405,Intramural burials beneath house platforms; skull retrieval and plastering.
+con-gobekli-tepe--animal-symbolism,gobekli-tepe,concept-animal-symbolism,relates_to_concept,,,high,UNESCO-1572,Predator and wild-animal reliefs on the T-pillars.
+con-karahantepe--animal-symbolism,karahantepe,concept-animal-symbolism,relates_to_concept,,,high,TASTEPELER,"Animal sculpture and reliefs (snakes, leopards, birds of prey)."
+con-sayburc--animal-symbolism,sayburc,concept-animal-symbolism,relates_to_concept,,,high,OZDOGAN-2022,Leopards and a bull flank the human figures in the relief.
+con-catalhoyuk--animal-symbolism,catalhoyuk,concept-animal-symbolism,relates_to_concept,,,high,UNESCO-1405,"Bull imagery (bucrania, paintings) and leopard reliefs."
+con-karkamis--animal-symbolism,karkamis,concept-animal-symbolism,relates_to_concept,,,high,HITTITEMON-KARKAMIS,"Orthostat reliefs with lions, bulls and mythological creatures."
+con-samal--animal-symbolism,samal,concept-animal-symbolism,relates_to_concept,,,high,ZINCIRLI-EXP,Gate lions and orthostat animal reliefs of the citadel.
+con-karatepe--animal-symbolism,karatepe,concept-animal-symbolism,relates_to_concept,,,high,MUZE-KARATEPE,Sculpted gate lions and sphinxes; relief menagerie of the gatehouses.
+con-arslantepe--writing,arslantepe,concept-writing,relates_to_concept,,,medium,UNESCO-1622,Mass sealing administration: recording before script (pre-writing bureaucracy).
+con-kultepe--writing,kultepe,concept-writing,relates_to_concept,,,high,UNESCO-MOW-KULTEPE,Tens of thousands of Old Assyrian cuneiform tablets.
+con-hattusa--writing,hattusa,concept-writing,relates_to_concept,,,high,UNESCO-377,State cuneiform archives; hieroglyphic Luwian on seals and monuments.
+con-karkamis--writing,karkamis,concept-writing,relates_to_concept,,,high,HITTITEMON-KARKAMIS,Monumental Luwian hieroglyphic display inscriptions.
+con-samal--writing,samal,concept-writing,relates_to_concept,,,high,ZINCIRLI-EXP; WSRP-KILAMUWA,"Royal alphabetic inscriptions (Kilamuwa, Panamuwa, Bar-Rakib group)."
+con-karatepe--writing,karatepe,concept-writing,relates_to_concept,,,high,MUZE-KARATEPE,The long Azatiwada bilingual (Phoenician / hieroglyphic Luwian).
+con-arslantepe--power,arslantepe,concept-power,relates_to_concept,,,high,UNESCO-1622,4th-millennium palatial complex with centralized storage and redistribution.
+con-hattusa--power,hattusa,concept-power,relates_to_concept,,,high,UNESCO-377,"Imperial capital: fortifications, temples, royal citadel of Büyükkale."
+con-karkamis--power,karkamis,concept-power,relates_to_concept,,,high,HITTITEMON-KARKAMIS,"Viceregal seat, then leading Iron Age city-state on the Euphrates."
+con-samal--power,samal,concept-power,relates_to_concept,,,high,ZINCIRLI-EXP,Fortified royal city with palace complexes (bīt-ḫilāni) and royal stelae.
+con-karatepe--power,karatepe,concept-power,relates_to_concept,,,high,MUZE-KARATEPE,Fortress of a local ruler proclaiming his deeds at the gates.
+con-kultepe--trade,kultepe,concept-trade,relates_to_concept,,,high,UNESCO-MOW-KULTEPE,"Old Assyrian merchant colony: tin and textile trade, contracts, partnerships."
+con-arslantepe--trade,arslantepe,concept-trade,relates_to_concept,,,high,UNESCO-1622,Centralized storage and redistribution economy of the palace phase.
+con-karkamis--trade,karkamis,concept-trade,relates_to_concept,,,medium,HITTITEMON-KARKAMIS,Wealth of the city tied to control of the Euphrates crossing.
+con-catalhoyuk--memory,catalhoyuk,concept-memory,relates_to_concept,,,high,UNESCO-1405,Houses rebuilt in place over generations above ancestral burials.
+con-gobekli-tepe--memory,gobekli-tepe,concept-memory,relates_to_concept,,,medium,SCHMIDT-2010,"Enclosures were deliberately backfilled — monuments entombed, arguably remembered."
+con-samal--memory,samal,concept-memory,relates_to_concept,,,high,ISAC-KUTTAMUWA,Kuttamuwa stele institutes an ongoing mortuary feast for the deceased.
+con-hattusa--memory,hattusa,concept-memory,relates_to_concept,,,medium,UNESCO-377,Yazılıkaya linked to dynastic commemoration (Chamber B and Tudhaliya IV).
+con-samal--multilingualism,samal,concept-multilingualism,relates_to_concept,,,high,ZINCIRLI-EXP; WSRP-KILAMUWA,"Phoenician, Sam'alian and Aramaic used across one royal corpus."
+con-karatepe--multilingualism,karatepe,concept-multilingualism,relates_to_concept,,,high,MUZE-KARATEPE,Phoenician–Luwian bilingual display inscription.
+con-kultepe--multilingualism,kultepe,concept-multilingualism,relates_to_concept,,,high,UNESCO-MOW-KULTEPE,Old Assyrian archives in an Anatolian host city; earliest Hittite personal names.
+con-hattusa--multilingualism,hattusa,concept-multilingualism,relates_to_concept,,,high,UNESCO-377,"Archives preserve Hittite, Luwian, Hattic, Hurrian, Akkadian and more."
+con-samal--border-kingdoms,samal,concept-border-kingdoms,relates_to_concept,,,high,ZINCIRLI-EXP,"Small kingdom between Assyria, Aramean and Luwian spheres."
+con-karatepe--border-kingdoms,karatepe,concept-border-kingdoms,relates_to_concept,,,high,MUZE-KARATEPE,Frontier fortress of the kingdom of Adana (Hiyawa) facing the Taurus.
+con-karkamis--border-kingdoms,karkamis,concept-border-kingdoms,relates_to_concept,,,high,HITTITEMON-KARKAMIS,City-state holding the imperial frontier crossing after Hatti's fall.
+int-gobekli-t-pillars,gobekli-tepe,interp-t-pillars-anthropomorphic,interpreted_as,,,medium,SCHMIDT-2010,"Carved arms/hands/belts on central pillars are the evidence; ""anthropomorphic beings"" is the reading."
+int-karahan-t-pillars,karahantepe,interp-t-pillars-anthropomorphic,interpreted_as,,,speculative,TASTEPELER; SCHMIDT-2010,Extension of the Göbekli Tepe reading to Karahantepe's pillars; plausible but not stated for this site in the cited publication.
+int-samal-kuttamuwa,samal,interp-kuttamuwa-soul,interpreted_as,,,high,ISAC-KUTTAMUWA,"The stele's own text (""my soul that is in this stele"") grounds the reading; its theological scope is debated."
+int-sayburc-narrative,sayburc,interp-sayburc-narrative,interpreted_as,,,medium,OZDOGAN-2022,Reading proposed in the primary publication of the relief.

@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this dataset or software, please cite it as below."
+title: "Anatolian Crossroads: A Memory Graph from Neolithic Symbols to Iron Age Inscriptions (macro dataset and visualization)"
+type: software
+authors:
+  - family-names: Karaca
+    given-names: "Doğan"
+version: 1.0.0
+date-released: 2026-07-02
+license: MIT
+repository-code: "https://github.com/dgnkaraca-hub/anatolian-crossroads"
+abstract: >-
+  A comparative digital-humanities network spanning 10 Anatolian and Upper
+  Mesopotamian sites (9600-700 BCE). Sites connect only through geographic
+  corridors, explicit comparative pairs and shared concept nodes; interpretive
+  claims live in a separate interpretation layer with a four-tier confidence
+  model. Every node and edge is sourced. Data files (JSON/CSV) are released
+  under CC BY 4.0; application code under MIT.
+keywords:
+  - digital humanities
+  - network analysis
+  - Anatolia
+  - Upper Mesopotamia
+  - Neolithic
+  - Iron Age
+  - epigraphy
+  - uncertainty modelling
+  - "Göbekli Tepe"
+  - "Sam'al"
