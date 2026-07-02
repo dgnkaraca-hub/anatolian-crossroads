@@ -799,16 +799,18 @@ export function allSources(): string[] {
 const DEV = import.meta.env.DEV
 
 export const MODULES: Record<string, { label: string; url: string }> = {
+  // Production paths are relative to the atlas at <root>/atlas/, so the
+  // assembled site works at a domain root and under a subpath (GitHub Pages).
   samal: {
     label: "Sam'al Epigraphic Network",
-    url: DEV ? 'http://localhost:5185/' : '/samal/',
+    url: DEV ? 'http://localhost:5185/' : '../samal/',
   },
   'gobekli-tepe': {
     label: 'Göbekli Tepe Network',
-    url: DEV ? 'http://localhost:5186/' : '/gobeklitepe/',
+    url: DEV ? 'http://localhost:5186/' : '../gobeklitepe/',
   },
   kultepe: {
     label: 'Kültepe-Kaneš — Pūšu-kēn Family Network',
-    url: DEV ? 'http://localhost:5191/' : '/kultepe/',
+    url: DEV ? 'http://localhost:5191/' : '../kultepe/',
   },
 }

@@ -14,7 +14,7 @@
  */
 
 import { execSync } from 'node:child_process'
-import { cpSync, existsSync, mkdirSync, rmSync } from 'node:fs'
+import { cpSync, existsSync, mkdirSync, rmSync, writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 
@@ -57,5 +57,8 @@ for (const app of APPS) {
 if (existsSync(path.join(root, 'data'))) {
   cpSync(path.join(root, 'data'), path.join(site, 'data'), { recursive: true })
 }
+
+// GitHub Pages: serve files verbatim (no Jekyll pass).
+writeFileSync(path.join(site, '.nojekyll'), '')
 
 console.log(`site/ assembled: landing + ${APPS.map((a) => '/' + a.out + '/').join(' ')} + /data/`)
