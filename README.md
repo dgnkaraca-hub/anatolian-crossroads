@@ -7,13 +7,35 @@
 **Live:** <https://dgnkaraca-hub.github.io/anatolian-crossroads/> — landing
 page, macro atlas (`/atlas/`), and the three site modules (`/samal/`,
 `/gobeklitepe/`, `/kultepe/`), with the open-data files under `/data/`.
+**Repository:** <https://github.com/dgnkaraca-hub/anatolian-crossroads>
 
-Macro level of a two-level digital-humanities graph spanning 10 Anatolian /
-Upper Mesopotamian sites, 9600–700 BCE. In this region memory is first
-constructed through stone, body, animal and ritual imagery, and later
-institutionalized through seals, tablets, inscriptions, palaces and urban
-plans. The project models this as a **comparative network — it never claims
-direct cultural continuity between sites.**
+Anatolian Crossroads is a digital humanities memory graph that maps selected
+Anatolian sites, concepts, symbols, inscriptions, and interpretive corridors
+from the Neolithic to the Iron Age (9600–700 BCE). The project does not
+claim direct cultural continuity; instead, it offers a comparative visual
+framework for exploring spatial, symbolic, and textual relationships across
+long historical duration.
+
+> **TR** · Anatolian Crossroads, Neolitik dönemden Demir Çağı'na uzanan
+> süreçte (MÖ 9600–700) Anadolu'daki seçili yerleşimleri, sembolleri,
+> kavramları, yazıtları ve yorumlayıcı koridorları görselleştiren bir
+> dijital beşeri bilimler bellek grafıdır. Proje doğrudan kültürel
+> süreklilik iddiası taşımaz; uzun tarihsel süre içinde mekânsal, sembolik
+> ve metinsel ilişkileri karşılaştırmalı biçimde keşfetmeye yönelik bir
+> çerçeve sunar.
+
+## Research scope and data model
+
+- **Time range:** 9600–700 BCE (BCE stored as negative years).
+- **Records:** `site`, `concept` and `interpretation` nodes; `corridor`,
+  `compares_with`, `relates_to_concept` and interpretation-layer edges —
+  every node and edge carries `sources[]` and a four-tier `confidence`
+  value (`high`/`medium`/`low`/`speculative`).
+- **Methodological warning:** this is a *comparative* network. Cross-site
+  relations are restricted to geographic corridors, explicit comparative
+  pairs and shared concepts; a relation such as `continues_into` cannot
+  exist in the schema and the runtime validator rejects site-to-site edges
+  outside the permitted set.
 
 ## Two-level architecture
 
@@ -86,8 +108,25 @@ pre-literate and epigraphic networks*. Release/DOI steps:
    (high/medium/low/speculative) + interpretation nodes.
 3. No continuity claims: site-to-site relations are restricted to
    `corridor` / `compares_with` at runtime.
-4. English-only code and UI chrome; TR/EN bilingualism in data fields only.
+4. English-only code and identifiers; the interface itself is fully
+   bilingual — the EN/TR toggle switches both UI chrome and data fields
+   (dates render as "9600 BCE" / "MÖ 9600").
 5. Fixed dev port **5187** (`strictPort`); 5185/5186 belong to the modules.
+
+## Archive and citation (Zenodo)
+
+The v1.0.0 macro dataset is archived on Zenodo with a DOI:
+concept DOI **[10.5281/zenodo.21158715](https://doi.org/10.5281/zenodo.21158715)**
+(always resolves to the latest version; v1.0.0 specifically is
+`10.5281/zenodo.21158716`). Data files are CC BY 4.0; code is MIT.
+Citation metadata lives in [`CITATION.cff`](CITATION.cff) (GitHub's
+"Cite this repository" box) and [`.zenodo.json`](.zenodo.json).
+
+Suggested citation:
+
+> Karaca, D. (2026). *Anatolian Crossroads: A Memory Graph from Neolithic
+> Symbols to Iron Age Inscriptions (macro dataset)*, v1.0.0. Zenodo.
+> <https://doi.org/10.5281/zenodo.21158715>
 
 ## Development
 

@@ -7,15 +7,17 @@
 
 import { useEffect, useRef, useState } from 'react'
 import { startSonification, type SonifyHandle } from '../lib/sonify'
+import { ui, uiText, type DataLang } from '../lib/i18n'
 
 interface Props {
+  lang: DataLang
   onYear: (year: number | null) => void
   onClose: () => void
 }
 
 const DURATIONS = [60, 120, 300]
 
-export default function ListenPanel({ onYear, onClose }: Props) {
+export default function ListenPanel({ lang, onYear, onClose }: Props) {
   const [playing, setPlaying] = useState(false)
   const [duration, setDuration] = useState(120)
   const [volume, setVolume] = useState(0.7)
@@ -48,8 +50,10 @@ export default function ListenPanel({ onYear, onClose }: Props) {
     <div className="listen-panel">
       <div className="listen-header">
         <div>
-          <div className="story-panel-kicker">Listen — sonification</div>
-          <h3>Nine millennia, {duration} seconds</h3>
+          <div className="story-panel-kicker">{ui('Listen — sonification', lang)}</div>
+          <h3>
+            {ui('Nine millennia,', lang)} {duration} {ui('seconds', lang)}
+          </h3>
         </div>
         <button
           className="chip"
@@ -58,20 +62,15 @@ export default function ListenPanel({ onYear, onClose }: Props) {
             onClose()
           }}
         >
-          close
+          {ui('close', lang)}
         </button>
       </div>
 
-      <p className="listen-framing">
-        A deep listening of the atlas: each site sounds while it is attested.
-        North is high, south is low; west is left, east is right; stone
-        speaks in triangle waves, the written record in sine. Corridors ring
-        once, when their later end awakens.
-      </p>
+      <p className="listen-framing">{uiText('listenFraming', lang)}</p>
 
       <div className="listen-controls">
         <button className={`chip${playing ? '' : ' on'}`} onClick={playing ? stop : play}>
-          {playing ? '■ stop' : '▶ play'}
+          {playing ? ui('■ stop', lang) : ui('▶ play', lang)}
         </button>
         <select
           value={duration}
@@ -80,12 +79,12 @@ export default function ListenPanel({ onYear, onClose }: Props) {
         >
           {DURATIONS.map((d) => (
             <option key={d} value={d}>
-              {d} s sweep
+              {d} {ui('s sweep', lang)}
             </option>
           ))}
         </select>
         <label className="listen-volume">
-          vol
+          {ui('vol', lang)}
           <input
             type="range"
             min={0}

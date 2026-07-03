@@ -211,7 +211,7 @@ const siteNodes: GraphNode[] = [
     date_end: -700,
     lat: 36.8317,
     lng: 38.0156,
-    modern_location: 'Gaziantep, Türkiye (border with Syria)',
+    modern_location: 'Gaziantep, Türkiye',
     ancient_region: 'Middle Euphrates crossing',
     summary_en:
       'City commanding the Euphrates crossing; former Hittite viceregal seat, then the leading Iron Age city-state with monumental Luwian hieroglyphic inscriptions and reliefs.',
@@ -798,19 +798,25 @@ export function allSources(): string[] {
  */
 const DEV = import.meta.env.DEV
 
-export const MODULES: Record<string, { label: string; url: string }> = {
+export const MODULES: Record<
+  string,
+  { label: string; label_tr: string; url: string }
+> = {
   // Production paths are relative to the atlas at <root>/atlas/, so the
   // assembled site works at a domain root and under a subpath (GitHub Pages).
   samal: {
     label: "Sam'al Epigraphic Network",
+    label_tr: "Sam'al Epigrafik Ağı",
     url: DEV ? 'http://localhost:5185/' : '../samal/',
   },
   'gobekli-tepe': {
     label: 'Göbekli Tepe Network',
+    label_tr: 'Göbekli Tepe Ağı',
     url: DEV ? 'http://localhost:5186/' : '../gobeklitepe/',
   },
   kultepe: {
     label: 'Kültepe-Kaneš — Pūšu-kēn Family Network',
+    label_tr: 'Kültepe-Kaneš — Pūšu-kēn Aile Ağı',
     url: DEV ? 'http://localhost:5191/' : '../kultepe/',
   },
 }

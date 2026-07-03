@@ -10,7 +10,7 @@ import {
 } from './data/validate'
 import { computeVisible, defaultFilters, type FilterState } from './lib/filter'
 import { exportCsv, exportJson } from './lib/export'
-import type { DataLang } from './lib/i18n'
+import { ui, uiText, type DataLang } from './lib/i18n'
 import Toolbar from './components/Toolbar'
 import TimeSlider from './components/TimeSlider'
 import EvidencePanel from './components/EvidencePanel'
@@ -73,6 +73,12 @@ export default function App() {
     setFilters((f) => ({ ...f, year: null, conceptFocus: null }))
   }
 
+  // Keep the document language in sync so CSS text-transform uses Turkish
+  // casing rules (i -> İ) in TR mode.
+  useEffect(() => {
+    document.documentElement.lang = lang
+  }, [lang])
+
   const graph = useMemo(() => computeVisible(filters), [filters])
   const { sourced, total } = sourcedRecordCount()
 
@@ -81,14 +87,16 @@ export default function App() {
       <header className="app-header">
         <div>
           <h1>{dataset.meta.title}</h1>
-          <span className="subtitle">{dataset.meta.subtitle} · 9600–700 BCE</span>
+          <span className="subtitle">
+            {ui(`${dataset.meta.subtitle} · 9600–700 BCE`, lang)}
+          </span>
         </div>
         <div className="header-meta">
-          {dataset.nodes.length} nodes · {dataset.edges.length} edges ·{' '}
-          {allSources().length} sources
+          {dataset.nodes.length} {ui('nodes', lang)} · {dataset.edges.length}{' '}
+          {ui('edges', lang)} · {allSources().length} {ui('sources', lang)}
           <br />
           <span className="sourced-count">
-            {sourced}/{total} records sourced
+            {sourced}/{total} {ui('records sourced', lang)}
           </span>
         </div>
       </header>
@@ -105,6 +113,7 @@ export default function App() {
 
       <TimeSlider
         year={filters.year}
+        lang={lang}
         setYear={(year) => setFilters({ ...filters, year })}
       />
 
@@ -117,9 +126,9 @@ export default function App() {
         <button
           className={`chip listen-chip${showListen ? ' on' : ''}`}
           onClick={() => setShowListen((v) => !v)}
-          title="Sonification: play the atlas as sound"
+          title={ui('Sonification: play the atlas as sound', lang)}
         >
-          ♫ listen
+          ♫ {ui('listen', lang)}
         </button>
       </StoryBar>
 
@@ -136,12 +145,13 @@ export default function App() {
           )}
           {showListen && (
             <ListenPanel
+              lang={lang}
               onYear={(year) => setFilters((f) => ({ ...f, year }))}
               onClose={() => setShowListen(false)}
             />
           )}
           <section className="panel map-panel">
-            <div className="panel-title">Site atlas</div>
+            <div className="panel-title">{ui('Site atlas', lang)}</div>
             <MapView
               graph={graph}
               lang={lang}
@@ -152,7 +162,7 @@ export default function App() {
             />
           </section>
           <section className="panel network-panel">
-            <div className="panel-title">Macro network</div>
+            <div className="panel-title">{ui('Macro network', lang)}</div>
             <NetworkView
               graph={graph}
               lang={lang}
@@ -167,12 +177,13 @@ export default function App() {
       </div>
 
       <footer className="app-footer">
-        Comparative network — corridors, concepts and comparisons only; no
-        continuity claims. Micro modules: Sam'al (:5185) · Göbekli Tepe
-        (:5186) · Kültepe-Kaneš (:5191).
+        {uiText('footerMethod', lang)} {ui('Micro modules:', lang)} Sam'al
+        (:5185) · Göbekli Tepe (:5186) · Kültepe-Kaneš (:5191).
       </footer>
 
-      {showSources && <SourcesModal onClose={() => setShowSources(false)} />}
+      {showSources && (
+        <SourcesModal lang={lang} onClose={() => setShowSources(false)} />
+      )}
     </div>
   )
 }

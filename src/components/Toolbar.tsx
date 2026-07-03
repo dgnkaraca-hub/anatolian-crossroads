@@ -1,6 +1,6 @@
 /**
- * Filters + data-language toggle + export. UI chrome is English-only;
- * the EN/TR toggle switches data labels/summaries only.
+ * Filters + data-language toggle + export. Fully bilingual: the EN/TR
+ * toggle switches both data fields and UI chrome (ui() dictionary).
  */
 
 import type { Confidence, EvidenceType, NodeType } from '../types/schema'
@@ -10,8 +10,14 @@ import {
   MACRO_NODE_TYPES,
   type FilterState,
 } from '../lib/filter'
-import type { DataLang } from '../lib/i18n'
-import { nodeLabel } from '../lib/i18n'
+import {
+  confLabel,
+  evidenceLabel,
+  nodeLabel,
+  typeLabel,
+  ui,
+  type DataLang,
+} from '../lib/i18n'
 
 interface Props {
   filters: FilterState
@@ -55,7 +61,7 @@ export default function Toolbar({
   return (
     <div className="toolbar">
       <div className="toolbar-group">
-        <span className="toolbar-label">Types</span>
+        <span className="toolbar-label">{ui('Types', lang)}</span>
         {MACRO_NODE_TYPES.map((t: NodeType) => (
           <button
             key={t}
@@ -64,13 +70,13 @@ export default function Toolbar({
               setFilters({ ...filters, types: toggleSet(filters.types, t) })
             }
           >
-            {t}
+            {typeLabel(t, lang)}
           </button>
         ))}
       </div>
 
       <div className="toolbar-group">
-        <span className="toolbar-label">Confidence</span>
+        <span className="toolbar-label">{ui('Confidence', lang)}</span>
         {CONFIDENCE_LEVELS.map((c: Confidence) => (
           <button
             key={c}
@@ -82,7 +88,7 @@ export default function Toolbar({
               })
             }
           >
-            {c}
+            {confLabel(c, lang)}
           </button>
         ))}
         <label className="switch">
@@ -93,19 +99,19 @@ export default function Toolbar({
               setFilters({ ...filters, hideSpeculative: e.target.checked })
             }
           />
-          hide speculative
+          {ui('hide speculative', lang)}
         </label>
       </div>
 
       <div className="toolbar-group">
-        <span className="toolbar-label">Concept</span>
+        <span className="toolbar-label">{ui('Concept', lang)}</span>
         <select
           value={filters.conceptFocus ?? ''}
           onChange={(e) =>
             setFilters({ ...filters, conceptFocus: e.target.value || null })
           }
         >
-          <option value="">all concepts</option>
+          <option value="">{ui('all concepts', lang)}</option>
           {concepts.map((c) => (
             <option key={c.id} value={c.id}>
               {nodeLabel(c, lang)}
@@ -115,7 +121,7 @@ export default function Toolbar({
       </div>
 
       <div className="toolbar-group">
-        <span className="toolbar-label">Evidence</span>
+        <span className="toolbar-label">{ui('Evidence', lang)}</span>
         <select
           value={filters.evidenceTypes.size === 1 ? [...filters.evidenceTypes][0] : ''}
           onChange={(e) =>
@@ -127,10 +133,10 @@ export default function Toolbar({
             })
           }
         >
-          <option value="">all evidence</option>
+          <option value="">{ui('all evidence', lang)}</option>
           {EVIDENCE_TYPES.map((t) => (
             <option key={t} value={t}>
-              {t.replace('_', ' ')}
+              {evidenceLabel(t, lang)}
             </option>
           ))}
         </select>
@@ -147,18 +153,18 @@ export default function Toolbar({
         <button
           className={`chip${lang === 'tr' ? ' on' : ''}`}
           onClick={() => setLang('tr')}
-          title="Data language: Turkish"
+          title="Veri dili: Türkçe"
         >
           TR
         </button>
         <button className="chip" onClick={onShowSources}>
-          sources
+          {ui('Sources', lang).toLowerCase()}
         </button>
         <button className="chip" onClick={onExportJson}>
-          export JSON
+          {ui('export JSON', lang)}
         </button>
         <button className="chip" onClick={onExportCsv}>
-          export CSV
+          {ui('export CSV', lang)}
         </button>
       </div>
     </div>

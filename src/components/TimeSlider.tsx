@@ -4,26 +4,27 @@
  * dim on both map and network rather than disappearing.
  */
 
-import { formatYear } from '../lib/i18n'
+import { formatYear, ui, type DataLang } from '../lib/i18n'
 
 const MIN = -9600
 const MAX = -700
 
 interface Props {
   year: number | null
+  lang: DataLang
   setYear: (y: number | null) => void
 }
 
-export default function TimeSlider({ year, setYear }: Props) {
+export default function TimeSlider({ year, lang, setYear }: Props) {
   return (
     <div className="time-slider">
       <button
         className={`chip${year === null ? ' on' : ''}`}
         onClick={() => setYear(null)}
       >
-        full range
+        {ui('full range', lang)}
       </button>
-      <span className="time-min">9600 BCE</span>
+      <span className="time-min">{formatYear(MIN, lang)}</span>
       <input
         type="range"
         min={MIN}
@@ -32,9 +33,9 @@ export default function TimeSlider({ year, setYear }: Props) {
         value={year ?? MIN}
         onChange={(e) => setYear(Number(e.target.value))}
       />
-      <span className="time-max">700 BCE</span>
+      <span className="time-max">{formatYear(MAX, lang)}</span>
       <span className="time-value">
-        {year === null ? 'all periods' : formatYear(year)}
+        {year === null ? ui('all periods', lang) : formatYear(year, lang)}
       </span>
     </div>
   )

@@ -7,7 +7,7 @@
 
 import { STORIES, type StoryRoute, type StoryStep } from '../data/stories'
 import { getNode } from '../data/graph'
-import { nodeLabel, type DataLang } from '../lib/i18n'
+import { nodeLabel, typeLabel, ui, type DataLang } from '../lib/i18n'
 
 function storyTitle(story: StoryRoute, lang: DataLang): string {
   return lang === 'tr' ? story.title_tr : story.title_en
@@ -25,7 +25,7 @@ interface BarProps {
 export function StoryBar({ activeStoryId, lang, onStart, onExit, children }: BarProps) {
   return (
     <div className="story-bar">
-      <span className="toolbar-label">Story routes</span>
+      <span className="toolbar-label">{ui('Story routes', lang)}</span>
       {STORIES.map((story) => {
         const on = story.id === activeStoryId
         return (
@@ -61,11 +61,11 @@ export function StoryPanel({ story, stepIndex, lang, onStep, onExit }: PanelProp
     <div className="story-panel">
       <div className="story-panel-header">
         <div>
-          <div className="story-panel-kicker">Story route</div>
+          <div className="story-panel-kicker">{ui('Story route', lang)}</div>
           <h3>{storyTitle(story, lang)}</h3>
         </div>
         <button className="chip" onClick={onExit}>
-          exit
+          {ui('exit', lang)}
         </button>
       </div>
 
@@ -75,7 +75,7 @@ export function StoryPanel({ story, stepIndex, lang, onStep, onExit }: PanelProp
         {focusNode && (
           <>
             <span className={`node-type-tag type-${focusNode.type}`}>
-              {focusNode.type}
+              {typeLabel(focusNode.type, lang)}
             </span>{' '}
             <span className="story-focus-label">{nodeLabel(focusNode, lang)}</span>
           </>
@@ -96,14 +96,14 @@ export function StoryPanel({ story, stepIndex, lang, onStep, onExit }: PanelProp
           disabled={stepIndex === 0}
           onClick={() => onStep(stepIndex - 1)}
         >
-          ← prev
+          {ui('← prev', lang)}
         </button>
         <div className="story-progress">
           {story.steps.map((_, i) => (
             <button
               key={i}
               className={`story-dot${i === stepIndex ? ' on' : ''}`}
-              aria-label={`step ${i + 1}`}
+              aria-label={`${ui('step', lang)} ${i + 1}`}
               onClick={() => onStep(i)}
             />
           ))}
@@ -116,7 +116,7 @@ export function StoryPanel({ story, stepIndex, lang, onStep, onExit }: PanelProp
           disabled={stepIndex === story.steps.length - 1}
           onClick={() => onStep(stepIndex + 1)}
         >
-          next →
+          {ui('next →', lang)}
         </button>
       </div>
     </div>

@@ -19,7 +19,7 @@ import { zoom, zoomIdentity, type ZoomBehavior } from 'd3-zoom'
 import { drag } from 'd3-drag'
 import type { GraphEdge, GraphNode } from '../types/schema'
 import type { VisibleGraph } from '../lib/filter'
-import { nodeLabel, type DataLang } from '../lib/i18n'
+import { nodeLabel, relationLabel, typeLabel, ui, type DataLang } from '../lib/i18n'
 
 interface SimNode extends SimulationNodeDatum {
   id: string
@@ -234,12 +234,12 @@ export default function NetworkView({
         </g>
       </svg>
       <div className="network-legend">
-        <span className="legend-item"><i className="swatch site" /> site</span>
-        <span className="legend-item"><i className="swatch concept" /> concept</span>
-        <span className="legend-item"><i className="swatch interpretation" /> interpretation</span>
-        <span className="legend-item"><i className="line corridor" /> corridor</span>
-        <span className="legend-item"><i className="line compare" /> compares with</span>
-        <span className="legend-item"><i className="line concept-edge" /> concept link</span>
+        <span className="legend-item"><i className="swatch site" /> {typeLabel('site', lang)}</span>
+        <span className="legend-item"><i className="swatch concept" /> {typeLabel('concept', lang)}</span>
+        <span className="legend-item"><i className="swatch interpretation" /> {typeLabel('interpretation', lang)}</span>
+        <span className="legend-item"><i className="line corridor" /> {relationLabel('corridor', lang)}</span>
+        <span className="legend-item"><i className="line compare" /> {ui('compares with', lang)}</span>
+        <span className="legend-item"><i className="line concept-edge" /> {ui('concept link', lang)}</span>
       </div>
     </div>
   )

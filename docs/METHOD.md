@@ -89,11 +89,13 @@ filtering is a lens, not an eraser.
 
 ## 6. Bilingual data, monolingual structure
 
-All identifiers, code and UI chrome are English; every human-readable data
-field is bilingual (`label_en`/`label_tr`, `summary_en`/`summary_tr`,
-narrative fields in story routes). Language is data, not infrastructure —
-the TR/EN toggle changes content only, which keeps the schema stable for
-reuse in either language community.
+All identifiers and code are English; every human-readable data field is
+bilingual (`label_en`/`label_tr`, `summary_en`/`summary_tr`, narrative
+fields in story routes), and since v1.0.1 the interface chrome is fully
+localized as well (a dictionary layer keyed by stable record ids for
+curatorial notes — the dataset structure itself is untouched). Language
+never leaks into identifiers, which keeps the schema stable for reuse in
+either language community.
 
 ## 7. Story routes as sourced data
 

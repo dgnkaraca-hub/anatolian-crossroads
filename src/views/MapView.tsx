@@ -9,7 +9,7 @@ import { geoMercator, geoPath, type GeoProjection } from 'd3-geo'
 import { BASEMAP_LINES, MAP_BOUNDS } from '../data/basemap'
 import type { GraphNode } from '../types/schema'
 import type { VisibleGraph } from '../lib/filter'
-import { nodeLabel, type DataLang } from '../lib/i18n'
+import { nodeLabel, ui, type DataLang } from '../lib/i18n'
 
 interface Props {
   graph: VisibleGraph
@@ -72,10 +72,11 @@ export default function MapView({
         [MAP_BOUNDS.east, MAP_BOUNDS.north],
       ],
     }
+    // Tight padding: let the map fill the panel (scholarly atlas, not inset).
     return geoMercator().fitExtent(
       [
-        [16, 16],
-        [width - 16, height - 16],
+        [10, 10],
+        [width - 10, height - 10],
       ],
       frame,
     )
@@ -112,10 +113,15 @@ export default function MapView({
           />
         ))}
         {/* river/sea labels */}
-        <MapLabel projection={projection} lng={33.5} lat={41.6} text="Black Sea" />
-        <MapLabel projection={projection} lng={31.2} lat={35.6} text="Mediterranean Sea" />
-        <MapLabel projection={projection} lng={39.4} lat={36.15} text="Euphrates" />
-        <MapLabel projection={projection} lng={41.9} lat={37.75} text="Tigris" />
+        <MapLabel projection={projection} lng={33.5} lat={41.6} text={ui('Black Sea', lang)} />
+        <MapLabel
+          projection={projection}
+          lng={31.2}
+          lat={35.6}
+          text={ui('Mediterranean Sea', lang)}
+        />
+        <MapLabel projection={projection} lng={39.4} lat={36.15} text={ui('Euphrates', lang)} />
+        <MapLabel projection={projection} lng={41.9} lat={37.75} text={ui('Tigris', lang)} />
 
         {/* corridor edges */}
         {corridors.map((e) => {
@@ -154,7 +160,7 @@ export default function MapView({
               onMouseEnter={() => onHover(s.id)}
               onMouseLeave={() => onHover(null)}
             >
-              <circle r={active ? 7 : 5} />
+              <circle r={active ? 8 : 6} />
               <text
                 dx={offset.dx ?? 0}
                 dy={offset.dy ?? -10}
