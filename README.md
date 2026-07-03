@@ -2,6 +2,8 @@
 
 **A Memory Graph from Neolithic Symbols to Iron Age Inscriptions**
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21158715.svg)](https://doi.org/10.5281/zenodo.21158715)
+
 **Live:** <https://dgnkaraca-hub.github.io/anatolian-crossroads/> — landing
 page, macro atlas (`/atlas/`), and the three site modules (`/samal/`,
 `/gobeklitepe/`, `/kultepe/`), with the open-data files under `/data/`.

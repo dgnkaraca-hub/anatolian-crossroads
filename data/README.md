@@ -34,7 +34,11 @@ The data files in this directory are released under
 [Creative Commons Attribution 4.0 (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 The application code is MIT-licensed (see [`LICENSE`](../LICENSE)).
 
-Cite via [`CITATION.cff`](../CITATION.cff), or the Zenodo DOI once minted:
+Cite via [`CITATION.cff`](../CITATION.cff) or the Zenodo DOI:
 
 > Karaca, D. (2026). *Anatolian Crossroads: A Memory Graph from Neolithic
-> Symbols to Iron Age Inscriptions (macro dataset)*, v1.0.0.
+> Symbols to Iron Age Inscriptions (macro dataset)*, v1.0.0. Zenodo.
+> <https://doi.org/10.5281/zenodo.21158715>
+
+(Concept DOI `10.5281/zenodo.21158715` always resolves to the latest
+version; v1.0.0 specifically is `10.5281/zenodo.21158716`.)
