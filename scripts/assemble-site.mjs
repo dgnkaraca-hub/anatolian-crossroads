@@ -61,4 +61,10 @@ if (existsSync(path.join(root, 'data'))) {
 // GitHub Pages: serve files verbatim (no Jekyll pass).
 writeFileSync(path.join(site, '.nojekyll'), '')
 
+// GitHub Pages custom domain. Must ship with every deploy: the gh-pages
+// branch is force-pushed, so a CNAME set only in the Pages UI would be lost.
+// DNS: CNAME atlas -> dgnkaraca-hub.github.io (managed in Netlify DNS).
+const CUSTOM_DOMAIN = 'atlas.dogankaraca.com'
+writeFileSync(path.join(site, 'CNAME'), CUSTOM_DOMAIN + '\n')
+
 console.log(`site/ assembled: landing + ${APPS.map((a) => '/' + a.out + '/').join(' ')} + /data/`)
